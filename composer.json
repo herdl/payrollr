@@ -1,7 +1,7 @@
 {
     "name": "b3none/php-payrunio",
     "description": "A PHP client for the PayRun.io API",
-    "type": "project",
+    "type": "library",
     "authors": [
         {
             "name": "B3none",
@@ -13,5 +13,8 @@
             "B3none\\PayRun\\": "src/"
         }
     },
-    "require": {}
+    "require": {
+        "php": ">=7.2",
+        "squizlabs/php_codesniffer": "^3.4"
+    }
 }
