@@ -423,7 +423,20 @@ class AEAssessmentModel
     public function format(): array
     {
         return [
-
+            'Age' => $this->age,
+            'StatePensionAge' => $this->statePensionAge,
+            'StatePensionDate' => $this->statePensionDate,
+            'AssessmentDate' => $this->assessmentDate,
+            'QualifyingEarnings' => $this->qualifyingEarnings,
+            'AssessmentCode' => $this->assessmentCode,
+            'AssessmentEvent' => $this->assessmentEvent,
+            'AssessmentResult' => $this->assessmentResult,
+            'AssessmentOverride' => $this->assessmentOverride,
+            'OptOutWindowEndDate' => $this->optOutWindowEndDate,
+            'ReenrolmentDate' => $this->reEnrollmentDate,
+            'IsMemberOfAlternativePensionScheme' => $this->isMemberOfAlternativePensionScheme ? 'true' : 'false',
+            'TaxYear' => $this->taxYear,
+            'TaxPeriod' => $this->taxPeriod,
         ];
     }
 }
