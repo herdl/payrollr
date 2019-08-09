@@ -1,5 +1,6 @@
 <?php
 
+namespace B3none\PayRun;
 
 class Client
 {
