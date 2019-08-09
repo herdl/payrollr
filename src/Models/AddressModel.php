@@ -35,6 +35,49 @@ class AddressModel
     protected $country;
 
     /**
+     * AddressModel constructor.
+     *
+     * @param string|null $address1
+     * @param string|null $address2
+     * @param string|null $address3
+     * @param string|null $address4
+     * @param string|null $postCode
+     * @param string|null $country
+     */
+    public function __construct(
+        ?string $address1 = null,
+        ?string $address2 = null,
+        ?string $address3 = null,
+        ?string $address4 = null,
+        ?string $postCode = null,
+        ?string $country = null
+    ) {
+        if ($address1) {
+            $this->address1 = $address1;
+        }
+
+        if ($address2) {
+            $this->address2 = $address2;
+        }
+
+        if ($address3) {
+            $this->address3 = $address3;
+        }
+
+        if ($address4) {
+            $this->address4 = $address4;
+        }
+
+        if ($postCode) {
+            $this->postCode = $postCode;
+        }
+
+        if ($country) {
+            $this->country = $country;
+        }
+    }
+
+    /**
      * @param string $address1
      * @return AddressModel
      */
@@ -140,5 +183,20 @@ class AddressModel
     public function getCountry(): string
     {
         return $this->country;
+    }
+
+    /**
+     * @return array
+     */
+    public function format(): array
+    {
+        return [
+            'Address1' => $this->address1,
+            'Address2' => $this->address2,
+            'Address3' => $this->address3,
+            'Address4' => $this->address4,
+            'Postcode' => $this->postCode,
+            'Country' => $this->country,
+        ];
     }
 }
