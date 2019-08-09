@@ -423,20 +423,20 @@ class AEAssessmentModel
     public function format(): array
     {
         return [
-            'Age' => $this->age,
-            'StatePensionAge' => $this->statePensionAge,
-            'StatePensionDate' => $this->statePensionDate,
-            'AssessmentDate' => $this->assessmentDate,
-            'QualifyingEarnings' => $this->qualifyingEarnings,
-            'AssessmentCode' => $this->assessmentCode,
-            'AssessmentEvent' => $this->assessmentEvent,
-            'AssessmentResult' => $this->assessmentResult,
-            'AssessmentOverride' => $this->assessmentOverride,
-            'OptOutWindowEndDate' => $this->optOutWindowEndDate,
-            'ReenrolmentDate' => $this->reEnrollmentDate,
+            'Age' => (string)$this->age,
+            'StatePensionAge' => (string)$this->statePensionAge,
+            'StatePensionDate' => Date::formatDate($this->statePensionDate),
+            'AssessmentDate' => Date::formatDate($this->assessmentDate),
+            'QualifyingEarnings' => (string)$this->qualifyingEarnings,
+            'AssessmentCode' => (string)$this->assessmentCode,
+            'AssessmentEvent' => (string)$this->assessmentEvent,
+            'AssessmentResult' => (string)$this->assessmentResult,
+            'AssessmentOverride' => (string)$this->assessmentOverride,
+            'OptOutWindowEndDate' => Date::formatDate($this->optOutWindowEndDate),
+            'ReenrolmentDate' => Date::formatDate($this->reEnrollmentDate),
             'IsMemberOfAlternativePensionScheme' => $this->isMemberOfAlternativePensionScheme ? 'true' : 'false',
-            'TaxYear' => $this->taxYear,
-            'TaxPeriod' => $this->taxPeriod,
+            'TaxYear' => (string)$this->taxYear,
+            'TaxPeriod' => (string)$this->taxPeriod,
         ];
     }
 }
