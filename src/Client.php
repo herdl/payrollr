@@ -12,6 +12,13 @@ class Client
      */
     protected $guzzleClient;
 
+    /**
+     * Client constructor.
+     *
+     * @param $consumerKey
+     * @param $consumerSecret
+     * @param bool $isTesting
+     */
     public function __construct($consumerKey, $consumerSecret, $isTesting = false)
     {
         $this->guzzleClient = GuzzleHelper::create($consumerKey, $consumerSecret, $isTesting);
