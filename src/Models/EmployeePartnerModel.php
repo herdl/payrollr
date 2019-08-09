@@ -155,4 +155,18 @@ class EmployeePartnerModel
     {
         return $this->niNumber;
     }
+
+    /**
+     * @return array
+     */
+    public function format(): array
+    {
+        return [
+            'FirstName' => $this->firstName,
+            'MiddleName' => $this->middleName,
+            'Initials' => $this->initials,
+            'LastName' => $this->lastName,
+            'NiNumber' => $this->niNumber,
+        ];
+    }
 }

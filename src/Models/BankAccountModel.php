@@ -127,7 +127,10 @@ class BankAccountModel
         return $this->reference;
     }
 
-    public function format()
+    /**
+     * @return array
+     */
+    public function format(): array
     {
         return [
             'AccountName' => $this->accountName,
