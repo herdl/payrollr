@@ -8,21 +8,29 @@ namespace B3none\PayRun\Models;
 class BankAccountModel
 {
     /**
+     * The bank account name
+     *
      * @var string
      */
     protected $accountName;
 
     /**
+     * The account number
+     *
      * @var int
      */
     protected $accountNumber;
 
     /**
+     * The bank sort code
+     *
      * @var int
      */
     protected $sortCode;
 
     /**
+     * An alpha-numeric reference sometimes referred to as 'roll number' used by some building societies.
+     *
      * @var string
      */
     protected $reference;

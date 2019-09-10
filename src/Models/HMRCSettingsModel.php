@@ -8,37 +8,46 @@ namespace B3none\PayRun\Models;
 class HMRCSettingsModel
 {
     /**
-     * Between 100 and 999
+     * The Tax Office Number is the first part of your employer's PAYE reference issued by HMRC; it consists of 3 numbers.
+     * Required to make RTI submissions.
      *
      * @var int
      */
     protected $taxOfficeNumber;
 
     /**
+     * The Tax Office Reference is the second part of your employer's PAYE reference issued by HMRC; it consists of up to 10 apha-numeric characters.
+     * Required to make RTI submissions.
+     *
      * @var string
      */
     protected $taxOfficeReference;
 
     /**
+     * The Accounting Office Reference is issued by HMRC; typically it is found on employer's P30BC Employer Payment Booklet.
+     * Required to make RTI submissions.
+     *
      * @var string
      */
     protected $accountingOfficeRef;
 
     /**
-     * Between 1000000000 and 9999999999
+     * The Self Assessment Unique Tax reference; only applicable to sole proprietors or partnerships.
      *
      * @var int
      */
     protected $sautr;
 
     /**
-     * Between 1000000000 and 9999999999
+     * The Corporation Tax reference; applicable to limited companies.
      *
      * @var int
      */
     protected $cotaxRef;
 
     /**
+     * The entity type that is making the RTI submission on behalf of the employer. Required to make RTI submissions.
+     *
      * Individual, Company, Agent, Bureau, Partnership, Trust
      * Employer, Government, ActingInCapacity, Other
      *
@@ -47,36 +56,50 @@ class HMRCSettingsModel
     protected $sender;
 
     /**
+     * The government gateway username issued to the employer by HMRC. Required to make RTI submissions.
+     *
      * @var string
      */
     protected $senderId;
 
     /**
+     * The government gateway password issued to the employer by HMRC. Required to make RTI submissions.
+     *
      * @var string
      */
     protected $password;
 
     /**
+     * The designated HMRC contact person's first name.
+     *
      * @var string
      */
     protected $contactFirstName;
 
     /**
+     * The designated HMRC contact person's last name.
+     *
      * @var string
      */
     protected $contactLastName;
 
     /**
+     * The designated HMRC contact person's email address; RTI submission acknowledgements will be sent to this address.
+     *
      * @var string
      */
     protected $contactEmail;
 
     /**
+     * The designated HMRC contact person's telephone number.
+     *
      * @var string
      */
     protected $contactTelephone;
 
     /**
+     * The designated HMRC contact person's fax number.
+     *
      * @var string
      */
     protected $contactFax;

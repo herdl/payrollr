@@ -8,31 +8,43 @@ namespace B3none\PayRun\Models;
 class AddressModel
 {
     /**
+     * The first line of the address
+     *
      * @var string
      */
     protected $address1;
 
     /**
+     * The second line of the address
+     *
      * @var string
      */
     protected $address2;
 
     /**
+     * The third line of the address
+     *
      * @var string
      */
     protected $address3;
 
     /**
+     * The forth line of the address
+     *
      * @var string
      */
     protected $address4;
 
     /**
+     * The UK postcode, required if the country is United Kingdom
+     *
      * @var string
      */
     protected $postCode;
 
     /**
+     * The address country, e.g. United Kingdom
+     *
      * @var string
      */
     protected $country;

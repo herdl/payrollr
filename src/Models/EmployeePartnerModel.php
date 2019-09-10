@@ -8,26 +8,36 @@ namespace B3none\PayRun\Models;
 class EmployeePartnerModel
 {
     /**
+     * The employee's partner first name.
+     *
      * @var string
      */
     protected $firstName;
 
     /**
+     * The employee's partner middle name.
+     *
      * @var string
      */
     protected $middleName;
 
     /**
+     * The employee's partner initial, if not supplying a first name.
+     *
      * @var string
      */
     protected $initials;
 
     /**
+     * The employee's partner lastname or surname.
+     *
      * @var string
      */
     protected $lastName;
 
     /**
+     * The employee's partner National Insurance number issued by HMRC.
+     *
      * @var string
      */
     protected $niNumber;

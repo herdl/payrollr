@@ -8,71 +8,99 @@ namespace B3none\PayRun\Models;
 class AEAssessmentModel
 {
     /**
+     * The employee's age as time of assessment.
+     *
      * @var int
      */
     protected $age;
 
     /**
+     * The employee's state pension age in years.
+     *
      * @var int
      */
     protected $statePensionAge;
 
     /**
+     * The date the employee is entitled to claim state pension.
+     *
      * @var int
      */
     protected $statePensionDate;
 
     /**
+     * The date the assessment took place.
+     *
      * @var int
      */
     protected $assessmentDate;
 
     /**
+     * The assessment qualifying earnings.
+     *
      * @var float
      */
     protected $qualifyingEarnings;
 
     /**
+     * The assessment code. Indicates the worker type identified during the assessment.
+     *
      * @var string
      */
     protected $assessmentCode;
 
     /**
+     * The assessment event. Indicates the assessment event type.
+     *
      * @var string
      */
     protected $assessmentEvent;
 
     /**
+     * The assessment result. Indicates the assessment final result.
+     *
      * @var string
      */
     protected $assessmentResult;
 
     /**
+     * The assessment override. Indicates the type of assessment override action.
+     *
      * @var string
      */
     protected $assessmentOverride;
 
     /**
+     * The final date a worker can opt-out and have their contributions refunded.
+     *
      * @var int
      */
     protected $optOutWindowEndDate;
 
     /**
+     * The date on which all workers must be assessed for automatic re-enrolment by the employer.
+     *
      * @var int
      */
     protected $reEnrollmentDate;
 
     /**
+     * Indicates if the worker is already a member of a qualifying pension scheme.
+     *
      * @var bool
      */
     protected $isMemberOfAlternativePensionScheme;
 
     /**
+     * The tax year the assessment was made during.
+     *
      * @var int
      */
     protected $taxYear;
 
     /**
+     * The tax period the assessment was made during.
+     *
      * @var int
      */
     protected $taxPeriod;
