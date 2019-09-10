@@ -2,24 +2,35 @@
 
 namespace B3none\PayRun\Models;
 
+/**
+ * https://developer.payrun.io/docs/reference/employer/index.html#employer
+ */
 class EmployerModel
 {
     /**
+     * Timestamp for the date the revision will come into effect.
+     *
      * @var int
      */
     protected $effectiveDate;
 
     /**
+     * The revision number of the employer; this is a readonly system generated value.
+     *
      * @var int
      */
     protected $revision;
 
     /**
+     * The legal name of the employer.
+     *
      * @var string
      */
     protected $name;
 
     /**
+     * The employer's region which determines the default calculators to be used.
+     *
      * "NotSet", "England", "Scotland" or "Wales"
      *
      * @var string
@@ -27,6 +38,9 @@ class EmployerModel
     protected $region;
 
     /**
+     * The employer's territory which determines the default calculators to be used in all employee calculations.
+     * Currently United Kingdom is the only supported territory.
+     *
      * "UnitedKingdom"
      *
      * @var string
@@ -34,21 +48,33 @@ class EmployerModel
     protected $territory;
 
     /**
+     * The employer's unique identifier making payments through the BACS network.
+     *
      * @var int
      */
     protected $bacsServiceUserNumber;
 
     /**
+     * Indicates if the employer should claim the Employment Allowance See Claiming the Employment Allowance for more details.
+     *
+     * https://developer.payrun.io/docs/payroll-help/claiming-employment-allowance.html
+     *
      * @var bool
      */
     protected $claimEmploymentAllowance;
 
     /**
+     * Indicates if the employer should claim the Small Employer Relief See Claiming Small Employer Relief for more details.
+     *
+     * https://developer.payrun.io/docs/payroll-help/claiming-small-employer-relief.html
+     *
      * @var bool
      */
     protected $claimSmallEmployerRelief;
 
     /**
+     * The employer's annual levy allowance; The apprenticeship levy will only apply to employers with annual paybill in excess of £3 million.
+     *
      * Between 0, 15000
      *
      * @var int
@@ -56,33 +82,51 @@ class EmployerModel
     protected $apprenticeshipLevyAllowance;
 
     /**
-     * None|AutoEnrolmentStatusChangeRule|NiMissingPayInstructionRule|TaxMissingPayInstructionRule|TaxCodeUpliftRule|NiSetExpectedLetterRule|NiDateOfBirthChangeRetrospectiveCRule|NiDefermentStatusChangeRule|NiEndContractedOutTransferRule|PaymentAfterLeavingRule|LeaverEndInstructionsRule|P45StudentLoanInstructionRule|P45TaxInstructionRule|P45YtdTaxRule|YtdInstructionRule|TaxCodeRegionChangeRule|EmployeeDeceasedRule
+     * The list of pre-claculation rules to exclude by default for all employees. See Pre-calculation rules for more information on how they work.
+     *
+     * https://developer.payrun.io/docs/key-concepts/pre-calculation-rules.html
+     *
+     * None, AutoEnrolmentStatusChangeRule, NiMissingPayInstructionRule, TaxMissingPayInstructionRule,
+     * TaxCodeUpliftRule, NiSetExpectedLetterRule, NiDateOfBirthChangeRetrospectiveCRule,
+     * NiDefermentStatusChangeRule, NiEndContractedOutTransferRule, PaymentAfterLeavingRule,
+     * LeaverEndInstructionsRule, P45StudentLoanInstructionRule, P45TaxInstructionRule,
+     * P45YtdTaxRule, YtdInstructionRule, TaxCodeRegionChangeRule, EmployeeDeceasedRule
      *
      * @var string
      */
     protected $ruleExclusions;
 
     /**
+     * The employer's registered address.
+     *
      * @var AddressModel
      */
     protected $address;
 
     /**
+     * The employer's specific HMRC reference numbers and RTI credentials.
+     *
      * @var HMRCSettingsModel
      */
     protected $hmrcSettings;
 
     /**
+     * The employer's bank account; will be used as the originator account in any BACS reporting.
+     *
      * @var BankAccountModel
      */
     protected $bankAccount;
 
     /**
+     * The employer's auto enrolment details; controls the processing of auto enrolment assessments.
+     *
      * @var EmployerAutoEnrolmentModel
      */
     protected $autoEnrolment;
 
     /**
+     * The employers optional meta data collection.
+     *
      * @var MetaDataModel
      */
     protected $metaData;
