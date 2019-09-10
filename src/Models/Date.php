@@ -2,8 +2,6 @@
 
 namespace B3none\PayRun\Models;
 
-use DateTime;
-
 class Date
 {
     /**

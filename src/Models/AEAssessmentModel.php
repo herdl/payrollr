@@ -2,6 +2,9 @@
 
 namespace B3none\PayRun\Models;
 
+/**
+ * https://developer.payrun.io/docs/reference/ae-assessment/index.html#ae-assessment
+ */
 class AEAssessmentModel
 {
     /**
