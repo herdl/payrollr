@@ -2,6 +2,9 @@
 
 namespace B3none\PayRun\Models;
 
+/**
+ * https://developer.payrun.io/docs/reference/employer/index.html#employer-auto-enrolment
+ */
 class EmployerAutoEnrolmentModel
 {
     /**
@@ -107,7 +110,7 @@ class EmployerAutoEnrolmentModel
     /**
      * The link to the employers auto enrolment pension scheme.
      *
-     * @var string
+     * @var LinkModel
      */
     protected $pension;
 
@@ -252,10 +255,10 @@ class EmployerAutoEnrolmentModel
     }
 
     /**
-     * @param string $pension
+     * @param LinkModel $pension
      * @return EmployerAutoEnrolmentModel
      */
-    public function setPension(string $pension): EmployerAutoEnrolmentModel
+    public function setPension(LinkModel $pension): EmployerAutoEnrolmentModel
     {
         $this->pension = $pension;
         return $this;
@@ -374,9 +377,9 @@ class EmployerAutoEnrolmentModel
     }
 
     /**
-     * @return string
+     * @return LinkModel
      */
-    public function getPension(): string
+    public function getPension(): LinkModel
     {
         return $this->pension;
     }
