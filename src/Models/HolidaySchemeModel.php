@@ -96,6 +96,12 @@ class HolidaySchemeModel
      */
     protected $accrualPayCodes;
 
+
+    public function __construct(
+      ?string $test = null
+    ) {
+    }
+
     /**
      * @param int $effectiveDate
      * @return HolidaySchemeModel

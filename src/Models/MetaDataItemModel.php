@@ -22,6 +22,23 @@ class MetaDataItemModel
     protected $text;
 
     /**
+     * MetaDataItemModel constructor.
+     *
+     * @param string|null $name
+     * @param string|null $text
+     */
+    public function __construct(?string $name = null, ?string $text = null)
+    {
+        if ($name) {
+            $this->name = $name;
+        }
+
+        if ($text) {
+            $this->text = $text;
+        }
+    }
+
+    /**
      * @param string $name
      * @return MetaDataItemModel
      */
@@ -55,5 +72,16 @@ class MetaDataItemModel
     public function getText(): string
     {
         return $this->text;
+    }
+
+    /**
+     * @return array
+     */
+    public function format(): array
+    {
+        return [
+            '@Name' => $this->name,
+            '#text' => $this->text,
+        ];
     }
 }

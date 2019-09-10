@@ -115,6 +115,91 @@ class EmployerAutoEnrolmentModel
     protected $pension;
 
     /**
+     * EmployerAutoEnrolmentModel constructor.
+     *
+     * @param int|null $stagingDate
+     * @param int|null $postponementDate
+     * @param int|null $reEnrolmentDayOffset
+     * @param string|null $primaryFirstName
+     * @param string|null $primaryLastName
+     * @param string|null $primaryEmail
+     * @param string|null $primaryTelephone
+     * @param string|null $primaryJobTitle
+     * @param string|null $secondaryFirstName
+     * @param string|null $secondaryLastName
+     * @param string|null $secondaryEmail
+     * @param string|null $secondaryTelephone
+     * @param string|null $secondaryJobTitle
+     */
+    public function __construct(
+        ?int $stagingDate = null,
+        ?int $postponementDate = null,
+        ?int $reEnrolmentDayOffset = null,
+        ?string $primaryFirstName = null,
+        ?string $primaryLastName = null,
+        ?string $primaryEmail = null,
+        ?string $primaryTelephone = null,
+        ?string $primaryJobTitle = null,
+        ?string $secondaryFirstName = null,
+        ?string $secondaryLastName = null,
+        ?string $secondaryEmail = null,
+        ?string $secondaryTelephone = null,
+        ?string $secondaryJobTitle = null
+    ) {
+        if ($stagingDate) {
+            $this->stagingDate = $stagingDate;
+        }
+
+        if ($postponementDate) {
+            $this->postponementDate = $postponementDate;
+        }
+
+        if ($reEnrolmentDayOffset) {
+            $this->reEnrolmentDayOffset = $reEnrolmentDayOffset;
+        }
+
+        if ($primaryFirstName) {
+            $this->primaryFirstName = $primaryFirstName;
+        }
+
+        if ($primaryLastName) {
+            $this->primaryLastName = $primaryLastName;
+        }
+
+        if ($primaryEmail) {
+            $this->primaryEmail = $primaryEmail;
+        }
+
+        if ($primaryTelephone) {
+            $this->primaryTelephone = $primaryTelephone;
+        }
+
+        if ($primaryJobTitle) {
+            $this->primaryJobTitle = $primaryJobTitle;
+        }
+
+        if ($secondaryFirstName) {
+            $this->secondaryFirstName = $secondaryFirstName;
+        }
+
+        if ($secondaryLastName) {
+            $this->secondaryLastName = $secondaryLastName;
+        }
+
+        if ($secondaryEmail) {
+            $this->secondaryEmail = $secondaryEmail;
+        }
+
+        if ($secondaryTelephone) {
+            $this->secondaryTelephone = $secondaryTelephone;
+        }
+
+        if ($secondaryJobTitle) {
+            $this->secondaryJobTitle = $secondaryJobTitle;
+        }
+    }
+
+    /**
      * @param int $stagingDate
      * @return EmployerAutoEnrolmentModel
      */
@@ -382,5 +467,29 @@ class EmployerAutoEnrolmentModel
     public function getPension(): LinkModel
     {
         return $this->pension;
+    }
+
+    /**
+     * @return array
+     */
+    public function format(): array
+    {
+        return [
+            'StagingDate' => Date::formatDate($this->stagingDate),
+            'PostponementDate' => Date::formatDate($this->postponementDate),
+            'ReEnrolmentDayOffset' => $this->reEnrolmentDayOffset,
+            'ReEnrolmentMonthOffset' => $this->reEnrolmentMonthOffset,
+            'PrimaryFirstName' => $this->primaryFirstName,
+            'PrimaryLastName' => $this->primaryLastName,
+            'PrimaryEmail' => $this->primaryEmail,
+            'PrimaryTelephone' => $this->primaryTelephone,
+            'PrimaryJobTitle' => $this->primaryJobTitle,
+            'SecondaryFirstName' => $this->secondaryFirstName,
+            'SecondaryLastName' => $this->secondaryLastName,
+            'SecondaryEmail' => $this->secondaryEmail,
+            'SecondaryTelephone' => $this->secondaryTelephone,
+            'SecondaryJobTitle' => $this->secondaryJobTitle,
+            'Pension' => $this->pension->format(),
+        ];
     }
 }

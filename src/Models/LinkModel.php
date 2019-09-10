@@ -29,6 +29,28 @@ class LinkModel
     protected $rel;
 
     /**
+     * LinkModel constructor.
+     *
+     * @param string|null $title
+     * @param string|null $href
+     * @param string|null $rel
+     */
+    public function __construct(?string $title = null, ?string $href = null, ?string $rel = null)
+    {
+        if ($title) {
+            $this->title = $title;
+        }
+
+        if ($href) {
+            $this->href = $href;
+        }
+
+        if ($rel) {
+            $this->rel = $rel;
+        }
+    }
+
+    /**
      * @param string $title
      * @return LinkModel
      */

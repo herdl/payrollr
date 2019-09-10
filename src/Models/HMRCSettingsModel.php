@@ -104,6 +104,74 @@ class HMRCSettingsModel
      */
     protected $contactFax;
 
+    public function __construct(
+        ?int $taxOfficeNumber = null,
+        ?string $taxOfficeReference = null,
+        ?string $accountingOfficeRef = null,
+        ?int $sautr = null,
+        ?int $cotaxRef = null,
+        ?string $sender = null,
+        ?string $senderId = null,
+        ?string $password = null,
+        ?string $contactFirstName = null,
+        ?string $contactLastName = null,
+        ?string $contactEmail = null,
+        ?string $contactTelephone = null,
+        ?string $contactFax = null
+    ) {
+        if ($taxOfficeNumber) {
+            $this->taxOfficeNumber = $taxOfficeNumber;
+        }
+
+        if ($taxOfficeReference) {
+            $this->taxOfficeReference = $taxOfficeReference;
+        }
+
+        if ($accountingOfficeRef) {
+            $this->accountingOfficeRef = $accountingOfficeRef;
+        }
+
+        if ($sautr) {
+            $this->sautr = $sautr;
+        }
+
+        if ($cotaxRef) {
+            $this->cotaxRef = $cotaxRef;
+        }
+
+        if ($sender) {
+            $this->sender = $sender;
+        }
+
+        if ($senderId) {
+            $this->senderId = $senderId;
+        }
+
+        if ($password) {
+            $this->password = $password;
+        }
+
+        if ($contactFirstName) {
+            $this->contactFirstName = $contactFirstName;
+        }
+
+        if ($contactLastName) {
+            $this->contactLastName = $contactLastName;
+        }
+
+        if ($contactEmail) {
+            $this->contactEmail = $contactEmail;
+        }
+
+        if ($contactTelephone) {
+            $this->contactTelephone = $contactTelephone;
+        }
+
+        if ($contactFax) {
+            $this->contactFax = $contactFax;
+        }
+    }
+
     /**
      * @param int $taxOfficeNumber
      * @return HMRCSettingsModel
@@ -336,5 +404,27 @@ class HMRCSettingsModel
     public function getContactFax(): string
     {
         return $this->contactFax;
+    }
+
+    /**
+     * @return array
+     */
+    public function format(): array
+    {
+        return [
+            'TaxOfficeNumber' => $this->taxOfficeNumber,
+            'TaxOfficeReference' => $this->taxOfficeReference,
+            'AccountingOfficeRef' => $this->accountingOfficeRef,
+            'SAUTR' => $this->sautr,
+            'COTAXRef' => $this->cotaxRef,
+            'Sender' => $this->sender,
+            'SenderId' => $this->senderId,
+            'Password' => $this->password,
+            'ContactFirstName' => $this->contactFirstName,
+            'ContactLastName' => $this->contactLastName,
+            'ContactEmail' => $this->contactEmail,
+            'ContactTelephone' => $this->contactTelephone,
+            'ContactFax' => $this->contactFax,
+        ];
     }
 }

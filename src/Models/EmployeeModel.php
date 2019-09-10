@@ -151,7 +151,7 @@ class EmployeeModel
      *
      * @var string
      */
-    protected $leavingReason;
+    protected $leaverReason;
 
     /**
      * The list of pre-calculation rules to exclude. See Pre-calculation rules for more information on how they work.
@@ -318,6 +318,265 @@ class EmployeeModel
      * @var MetaDataModel
      */
     protected $metaData;
+
+    /**
+     * EmployeeModel constructor.
+     *
+     * @param int|null $effectiveDate
+     * @param int|null $revision
+     * @param string|null $code
+     * @param string|null $title
+     * @param string|null $firstName
+     * @param string|null $middleName
+     * @param string|null $initials
+     * @param string|null $lastName
+     * @param string|null $niNumber
+     * @param int|null $dateOfBirth
+     * @param int|null $directorshipAppointmentDate
+     * @param string|null $gender
+     * @param string|null $nicLiability
+     * @param string|null $region
+     * @param string|null $territory
+     * @param LinkModel|null $paySchedule
+     * @param int|null $startDate
+     * @param string|null $starterDeclaration
+     * @param int|null $leavingDate
+     * @param string|null $leaverReason
+     * @param string|null $ruleExclusions
+     * @param string|null $workingWeek
+     * @param string|null $address
+     * @param float|null $hoursPerWeek
+     * @param int|null $passportNumber
+     * @param string|null $seconded
+     * @param bool|null $isAgencyWorker
+     * @param bool|null $eeaCitizen
+     * @param bool|null $epm6
+     * @param bool|null $paymentToANonIndividual
+     * @param bool|null $irregularEmployment
+     * @param bool|null $onStrike
+     * @param string|null $paymentMethod
+     * @param string|null $maritalStatus
+     * @param BankAccountModel|null $bankAccount
+     * @param EmployeePartnerModel|null $employeePartner
+     * @param string|null $aeAssessmentOverride
+     * @param int|null $aeAssessmentOverrideDate
+     * @param int|null $aePostponementDate
+     * @param string|null $aeExclusionReasonCode
+     * @param bool|null $deactivated
+     * @param MetaDataModel|null $metaData
+     */
+    public function __construct(
+        ?int $effectiveDate = null,
+        ?int $revision = null,
+        ?string $code = null,
+        ?string $title = null,
+        ?string $firstName = null,
+        ?string $middleName = null,
+        ?string $initials = null,
+        ?string $lastName = null,
+        ?string $niNumber = null,
+        ?int $dateOfBirth = null,
+        ?int $directorshipAppointmentDate = null,
+        ?string $gender = null,
+        ?string $nicLiability = null,
+        ?string $region = null,
+        ?string $territory = null,
+        ?LinkModel $paySchedule = null,
+        ?int $startDate = null,
+        ?string $starterDeclaration = null,
+        ?int $leavingDate = null,
+        ?string $leaverReason = null,
+        ?string $ruleExclusions = null,
+        ?string $workingWeek = null,
+        ?string $address = null,
+        ?float $hoursPerWeek = null,
+        ?int $passportNumber = null,
+        ?string $seconded = null,
+        ?bool $isAgencyWorker = null,
+        ?bool $eeaCitizen = null,
+        ?bool $epm6 = null,
+        ?bool $paymentToANonIndividual = null,
+        ?bool $irregularEmployment = null,
+        ?bool $onStrike = null,
+        ?string $paymentMethod = null,
+        ?string $maritalStatus = null,
+        ?BankAccountModel $bankAccount = null,
+        ?EmployeePartnerModel $employeePartner = null,
+        ?string $aeAssessmentOverride = null,
+        ?int $aeAssessmentOverrideDate = null,
+        ?int $aePostponementDate = null,
+        ?string $aeExclusionReasonCode = null,
+        ?bool $deactivated = null,
+        ?MetaDataModel $metaData = null
+    ) {
+        if ($effectiveDate) {
+            $this->effectiveDate = $effectiveDate;
+        }
+
+        if ($revision) {
+            $this->revision = $revision;
+        }
+
+        if ($code) {
+            $this->code = $code;
+        }
+
+        if ($title) {
+            $this->title = $title;
+        }
+
+        if ($firstName) {
+            $this->firstName = $firstName;
+        }
+
+        if ($middleName) {
+            $this->middleName = $middleName;
+        }
+
+        if ($initials) {
+            $this->initials = $initials;
+        }
+
+        if ($lastName) {
+            $this->lastName = $lastName;
+        }
+
+        if ($niNumber) {
+            $this->niNumber = $niNumber;
+        }
+
+        if ($dateOfBirth) {
+            $this->dateOfBirth = $dateOfBirth;
+        }
+
+        if ($directorshipAppointmentDate) {
+            $this->directorshipAppointmentDate = $directorshipAppointmentDate;
+        }
+
+        if ($gender) {
+            $this->gender = $gender;
+        }
+
+        if ($nicLiability) {
+            $this->nicLiability = $nicLiability;
+        }
+
+        if ($region) {
+            $this->region = $region;
+        }
+
+        if ($territory) {
+            $this->territory = $territory;
+        }
+
+        if ($paySchedule) {
+            $this->paySchedule = $paySchedule;
+        }
+
+        if ($startDate) {
+            $this->startDate = $startDate;
+        }
+
+        if ($starterDeclaration) {
+            $this->starterDeclaration = $starterDeclaration;
+        }
+
+        if ($leavingDate) {
+            $this->leavingDate = $leavingDate;
+        }
+
+        if ($leaverReason) {
+            $this->leaverReason = $leaverReason;
+        }
+
+        if ($ruleExclusions) {
+            $this->ruleExclusions = $ruleExclusions;
+        }
+
+        if ($workingWeek) {
+            $this->workingWeek = $workingWeek;
+        }
+
+        if ($address) {
+            $this->address = $address;
+        }
+
+        if ($hoursPerWeek) {
+            $this->hoursPerWeek = $hoursPerWeek;
+        }
+
+        if ($passportNumber) {
+            $this->passportNumber = $passportNumber;
+        }
+
+        if ($seconded) {
+            $this->seconded = $seconded;
+        }
+
+        if ($isAgencyWorker) {
+            $this->isAgencyWorker = $isAgencyWorker;
+        }
+
+        if ($eeaCitizen) {
+            $this->eeaCitizen = $eeaCitizen;
+        }
+
+        if ($epm6) {
+            $this->epm6 = $epm6;
+        }
+
+        if ($paymentToANonIndividual) {
+            $this->paymentToANonIndividual = $paymentToANonIndividual;
+        }
+
+        if ($irregularEmployment) {
+            $this->irregularEmployment = $irregularEmployment;
+        }
+
+        if ($onStrike) {
+            $this->onStrike = $onStrike;
+        }
+
+        if ($paymentMethod) {
+            $this->paymentMethod = $paymentMethod;
+        }
+
+        if ($maritalStatus) {
+            $this->maritalStatus = $maritalStatus;
+        }
+
+        if ($bankAccount) {
+            $this->bankAccount = $bankAccount;
+        }
+
+        if ($employeePartner) {
+            $this->employeePartner = $employeePartner;
+        }
+
+        if ($aeAssessmentOverride) {
+            $this->aeAssessmentOverride = $aeAssessmentOverride;
+        }
+
+        if ($aeAssessmentOverrideDate) {
+            $this->aeAssessmentOverrideDate = $aeAssessmentOverrideDate;
+        }
+
+        if ($aePostponementDate) {
+            $this->aePostponementDate = $aePostponementDate;
+        }
+
+        if ($aeExclusionReasonCode) {
+            $this->aeExclusionReasonCode = $aeExclusionReasonCode;
+        }
+
+        if ($deactivated) {
+            $this->deactivated = $deactivated;
+        }
+
+        if ($metaData) {
+            $this->metaData = $metaData;
+        }
+    }
 
     /**
      * @param int $effectiveDate
@@ -510,12 +769,12 @@ class EmployeeModel
     }
 
     /**
-     * @param string $leavingReason
+     * @param string $leaverReason
      * @return EmployeeModel
      */
-    public function setLeavingReason(string $leavingReason): EmployeeModel
+    public function setLeaverReason(string $leaverReason): EmployeeModel
     {
-        $this->leavingReason = $leavingReason;
+        $this->leaverReason = $leaverReason;
         return $this;
     }
 
@@ -894,9 +1153,9 @@ class EmployeeModel
     /**
      * @return string
      */
-    public function getLeavingReason(): string
+    public function getLeaverReason(): string
     {
-        return $this->leavingReason;
+        return $this->leaverReason;
     }
 
     /**
@@ -1073,5 +1332,56 @@ class EmployeeModel
     public function getMetaData(): MetaDataModel
     {
         return $this->metaData;
+    }
+
+    /**
+     * @return array
+     */
+    public function format(): array
+    {
+        return [
+            'EffectiveDate' => Date::formatDate($this->effectiveDate),
+            'Revision' => $this->revision,
+            'Code' => $this->code,
+            'Title' => $this->title,
+            'FirstName' => $this->firstName,
+            'MiddleName' => $this->middleName,
+            'Initials' => $this->initials,
+            'LastName' => $this->lastName,
+            'NiNumber' => $this->niNumber,
+            'DateOfBirth' => Date::formatDate($this->dateOfBirth),
+            'DirectorshipAppointmentDate' => Date::formatDate($this->directorshipAppointmentDate),
+            'Gender' => $this->gender,
+            'NicLiability' => $this->nicLiability,
+            'Region' => $this->region,
+            'Territory' => $this->territory,
+            'PaySchedule' => $this->paySchedule->format(),
+            'StartDate' => Date::formatDate($this->startDate),
+            'StarterDeclaration' => $this->starterDeclaration,
+            'LeavingDate' => Date::formatDate($this->leavingDate),
+            'LeaverReason' => $this->leaverReason,
+            'RuleExclusions' => $this->ruleExclusions,
+            'WorkingWeek' => $this->workingWeek,
+            'Address' => $this->address->format(),
+            'HoursPerWeek' => $this->hoursPerWeek,
+            'PassportNumber' => $this->passportNumber,
+            'Seconded' => $this->seconded,
+            'EEACitizen' => $this->eeaCitizen ? 'true' : 'false',
+            'EPM6' => $this->epm6 ? 'true' : 'false',
+            'PaymentToANonIndividual' => $this->paymentToANonIndividual ? 'true' : 'false',
+            'IrregularEmployment' => $this->irregularEmployment ? 'true' : 'false',
+            'OnStrike' => $this->onStrike ? 'true' : 'false',
+            'PaymentMethod' => $this->paymentMethod,
+            'MaritalStatus' => $this->maritalStatus,
+            'BankAccount' => $this->bankAccount->format(),
+            'EmployeePartner' => $this->employeePartner->format(),
+            'IsAgencyWorker' => $this->isAgencyWorker ? 'true' : 'false',
+            'Deactivated' => $this->deactivated ? 'true' : 'false',
+            'AEAssessmentOverride' => $this->aeAssessmentOverride,
+            'AEAssessmentOverrideDate' => Date::formatDate($this->aeAssessmentOverrideDate),
+            'AEPostponementDate' => Date::formatDate($this->aePostponementDate),
+            'AEExclusionReasonCode' => $this->aeExclusionReasonCode,
+            'MetaData' => $this->metaData->format(),
+        ];
     }
 }

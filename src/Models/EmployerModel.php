@@ -132,6 +132,103 @@ class EmployerModel
     protected $metaData;
 
     /**
+     * EmployerModel constructor.
+     *
+     * @param int|null $effectiveDate
+     * @param int|null $revision
+     * @param string|null $name
+     * @param string|null $region
+     * @param string|null $territory
+     * @param int|null $bacsServiceUserNumber
+     * @param bool|null $claimEmploymentAllowance
+     * @param bool|null $claimSmallEmployerRelief
+     * @param int|null $apprenticeshipLevyAllowance
+     * @param string|null $ruleExclusions
+     * @param AddressModel|null $address
+     * @param HMRCSettingsModel|null $hmrcSettings
+     * @param BankAccountModel|null $bankAccount
+     * @param EmployerAutoEnrolmentModel|null $autoEnrolment
+     * @param MetaDataModel|null $metaData
+     */
+    public function __construct(
+        ?int $effectiveDate = null,
+        ?int $revision = null,
+        ?string $name = null,
+        ?string $region = null,
+        ?string $territory = null,
+        ?int $bacsServiceUserNumber = null,
+        ?bool $claimEmploymentAllowance = null,
+        ?bool $claimSmallEmployerRelief = null,
+        ?int $apprenticeshipLevyAllowance = null,
+        ?string $ruleExclusions = null,
+        ?AddressModel $address = null,
+        ?HMRCSettingsModel $hmrcSettings = null,
+        ?BankAccountModel $bankAccount = null,
+        ?EmployerAutoEnrolmentModel $autoEnrolment = null,
+        ?MetaDataModel $metaData = null
+    ) {
+        if ($effectiveDate) {
+            $this->effectiveDate = $effectiveDate;
+        }
+
+        if ($revision) {
+            $this->revision = $revision;
+        }
+
+        if ($name) {
+            $this->name = $name;
+        }
+
+        if ($region) {
+            $this->region = $region;
+        }
+
+        if ($territory) {
+            $this->territory = $territory;
+        }
+
+        if ($bacsServiceUserNumber) {
+            $this->bacsServiceUserNumber = $bacsServiceUserNumber;
+        }
+
+        if ($claimEmploymentAllowance) {
+            $this->claimEmploymentAllowance = $claimEmploymentAllowance;
+        }
+
+        if ($claimSmallEmployerRelief) {
+            $this->claimSmallEmployerRelief = $claimSmallEmployerRelief;
+        }
+
+        if ($apprenticeshipLevyAllowance) {
+            $this->apprenticeshipLevyAllowance = $apprenticeshipLevyAllowance;
+        }
+
+        if ($ruleExclusions) {
+            $this->ruleExclusions = $ruleExclusions;
+        }
+
+        if ($address) {
+            $this->address = $address;
+        }
+
+        if ($hmrcSettings) {
+            $this->hmrcSettings = $hmrcSettings;
+        }
+
+        if ($bankAccount) {
+            $this->bankAccount = $bankAccount;
+        }
+
+        if ($autoEnrolment) {
+            $this->autoEnrolment = $autoEnrolment;
+        }
+
+        if ($metaData) {
+            $this->metaData = $metaData;
+        }
+    }
+
+    /**
      * @param int $effectiveDate
      * @return EmployerModel
      */
@@ -398,5 +495,29 @@ class EmployerModel
     public function getMetaData(): MetaDataModel
     {
         return $this->metaData;
+    }
+
+    /**
+     * @return array
+     */
+    public function format(): array
+    {
+        return [
+            'EffectiveDate' => $this->effectiveDate,
+            'Revision' => $this->revision,
+            'Name' => $this->name,
+            'Region' => $this->region,
+            'Territory' => $this->territory,
+            'BacsServiceUserNumber' => $this->bacsServiceUserNumber,
+            'RuleExclusions' => $this->ruleExclusions,
+            'ClaimEmploymentAllowance' => $this->claimEmploymentAllowance ? 'true' : 'false',
+            'ClaimSmallEmployerRelief' => $this->claimSmallEmployerRelief ? 'true' : 'false',
+            'ApprenticeshipLevyAllowance' => $this->apprenticeshipLevyAllowance,
+            'Address' => $this->address->format(),
+            'HmrcSettings' => $this->hmrcSettings->format(),
+            'BankAccount' => $this->bankAccount->format(),
+            'AutoEnrolment' => $this->autoEnrolment->format(),
+            'MetaData' => $this->metaData->format(),
+        ];
     }
 }

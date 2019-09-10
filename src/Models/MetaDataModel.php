@@ -14,6 +14,13 @@ class MetaDataModel
      */
     protected $item;
 
+    public function __construct(?array $item = null)
+    {
+        if ($item) {
+            $this->item = $item;
+        }
+    }
+
     /**
      * @param MetaDataItemModel[] $item
      * @return MetaDataModel
@@ -30,5 +37,18 @@ class MetaDataModel
     public function getItem(): array
     {
         return $this->item;
+    }
+
+    public function format(): array
+    {
+        $items = [];
+
+        foreach ($this->item as $item) {
+            $items[] = $item->format();
+        }
+
+        return [
+            'Item' => $items,
+        ];
     }
 }

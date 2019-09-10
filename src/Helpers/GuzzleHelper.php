@@ -19,7 +19,7 @@ class GuzzleHelper
      * @param bool $isTest
      * @return Client
      */
-    public static function create(string $consumerKey, string $consumerSecret, bool $isTest)
+    public static function create(string $consumerKey, string $consumerSecret, bool $isTest = false)
     {
         $stack = HandlerStack::create();
 

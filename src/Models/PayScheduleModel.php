@@ -31,6 +31,28 @@ class PayScheduleModel
     protected $metaData;
 
     /**
+     * PayScheduleModel constructor.
+     *
+     * @param string|null $name
+     * @param string|null $payFrequency
+     * @param MetaDataModel|null $metaData
+     */
+    public function __construct(?string $name = null, ?string $payFrequency = null, ?MetaDataModel $metaData = null)
+    {
+        if ($name) {
+            $this->name = $name;
+        }
+
+        if ($payFrequency) {
+            $this->payFrequency = $payFrequency;
+        }
+
+        if ($metaData) {
+            $this->metaData = $metaData;
+        }
+    }
+
+    /**
      * @param string $name
      * @return PayScheduleModel
      */
@@ -82,5 +104,17 @@ class PayScheduleModel
     public function getMetaData(): MetaDataModel
     {
         return $this->metaData;
+    }
+
+    /**
+     * @return array
+     */
+    public function format(): array
+    {
+        return [
+            'Name' => $this->name,
+            'PayFrequency' => $this->payFrequency,
+            'MetaData' => $this->metaData->format(),
+        ];
     }
 }
