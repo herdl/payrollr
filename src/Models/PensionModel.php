@@ -190,6 +190,157 @@ class PensionModel
     protected $metaData;
 
     /**
+     * PensionModel constructor.
+     *
+     * @param int|null $effectiveDate
+     * @param int|null $revision
+     * @param string|null $code
+     * @param string|null $schemeName
+     * @param string|null $providerName
+     * @param string|null $providerEmployerRef
+     * @param string|null $group
+     * @param string|null $subGroup
+     * @param float|null $employeeContributionCash
+     * @param float|null $employerContributionCash
+     * @param float|null $employeeContributionPercent
+     * @param float|null $employerContributionPercent
+     * @param float|null $lowerThreshold
+     * @param float|null $upperThreshold
+     * @param string|null $taxationMethod
+     * @param int|null $contributionDeductionDay
+     * @param bool|null $salarySacrifice
+     * @param string|null $proRataMethod
+     * @param string|null $roundingOption
+     * @param bool|null $aeCompatible
+     * @param bool|null $useAEThresholds
+     * @param array|null $pensionablePayCodes
+     * @param array|null $qualifyingPayCodes
+     * @param MetaDataModel|null $metaData
+     */
+    public function __construct(
+        ?int $effectiveDate = null,
+        ?int $revision = null,
+        ?string $code = null,
+        ?string $schemeName = null,
+        ?string $providerName = null,
+        ?string $providerEmployerRef = null,
+        ?string $group = null,
+        ?string $subGroup = null,
+        ?float $employeeContributionCash = null,
+        ?float $employerContributionCash = null,
+        ?float $employeeContributionPercent = null,
+        ?float $employerContributionPercent = null,
+        ?float $lowerThreshold = null,
+        ?float $upperThreshold = null,
+        ?string $taxationMethod = null,
+        ?int $contributionDeductionDay = null,
+        ?bool $salarySacrifice = null,
+        ?string $proRataMethod = null,
+        ?string $roundingOption = null,
+        ?bool $aeCompatible = null,
+        ?bool $useAEThresholds = null,
+        ?array $pensionablePayCodes = null,
+        ?array $qualifyingPayCodes = null,
+        ?MetaDataModel $metaData = null
+    ) {
+        if ($effectiveDate) {
+            $this->effectiveDate = $effectiveDate;
+        }
+
+        if ($revision) {
+            $this->revision = $revision;
+        }
+
+        if ($code) {
+            $this->code = $code;
+        }
+
+        if ($schemeName) {
+            $this->schemeName = $schemeName;
+        }
+
+        if ($providerName) {
+            $this->providerName = $providerName;
+        }
+
+        if ($providerEmployerRef) {
+            $this->providerEmployerRef = $providerEmployerRef;
+        }
+
+        if ($group) {
+            $this->group = $group;
+        }
+
+        if ($subGroup) {
+            $this->subGroup = $subGroup;
+        }
+
+        if ($employeeContributionCash) {
+            $this->employeeContributionCash = $employeeContributionCash;
+        }
+
+        if ($employerContributionCash) {
+            $this->employerContributionCash = $employerContributionCash;
+        }
+
+        if ($employeeContributionPercent) {
+            $this->employeeContributionPercent = $employeeContributionPercent;
+        }
+
+        if ($employerContributionPercent) {
+            $this->employerContributionPercent = $employerContributionPercent;
+        }
+
+        if ($lowerThreshold) {
+            $this->lowerThreshold = $lowerThreshold;
+        }
+
+        if ($upperThreshold) {
+            $this->upperThreshold = $upperThreshold;
+        }
+
+        if ($taxationMethod) {
+            $this->taxationMethod = $taxationMethod;
+        }
+
+        if ($contributionDeductionDay) {
+            $this->contributionDeductionDay = $contributionDeductionDay;
+        }
+
+        if ($salarySacrifice) {
+            $this->salarySacrifice = $salarySacrifice;
+        }
+
+        if ($proRataMethod) {
+            $this->proRataMethod = $proRataMethod;
+        }
+
+        if ($roundingOption) {
+            $this->roundingOption = $roundingOption;
+        }
+
+        if ($aeCompatible) {
+            $this->aeCompatible = $aeCompatible;
+        }
+
+        if ($useAEThresholds) {
+            $this->useAEThresholds = $useAEThresholds;
+        }
+
+        if ($pensionablePayCodes) {
+            $this->pensionablePayCodes = $pensionablePayCodes;
+        }
+
+        if ($qualifyingPayCodes) {
+            $this->qualifyingPayCodes = $qualifyingPayCodes;
+        }
+
+        if ($metaData) {
+            $this->metaData = $metaData;
+        }
+    }
+
+    /**
      * @param int $effectiveDate
      * @return PensionModel
      */
@@ -619,5 +770,42 @@ class PensionModel
     public function getMetaData(): MetaDataModel
     {
         return $this->metaData;
+    }
+
+    /**
+     * @return array
+     */
+    public function format(): array
+    {
+        return [
+            'EffectiveDate' => Date::formatDate($this->effectiveDate),
+            'Revision' => $this->revision,
+            'SchemeName' => $this->schemeName,
+            'ProviderName' => $this->providerName,
+            'ProviderEmployerRef' => $this->providerEmployerRef,
+            'Group' => $this->group,
+            'SubGroup' => $this->subGroup,
+            'EmployeeContributionCash' => $this->employeeContributionCash,
+            'EmployerContributionCash' => $this->employerContributionCash,
+            'EmployeeContributionPercent' => $this->employeeContributionPercent,
+            'EmployerContributionPercent' => $this->employerContributionPercent,
+            'LowerThreshold' => $this->lowerThreshold,
+            'UpperThreshold' => $this->upperThreshold,
+            'TaxationMethod' => $this->taxationMethod,
+            'Code' => $this->code,
+            'ContributionDeductionDay' => $this->contributionDeductionDay,
+            'SalarySacrifice' => $this->salarySacrifice ? 'true' : 'false',
+            'ProRataMethod' => $this->proRataMethod,
+            'RoundingOption' => $this->roundingOption,
+            'AECompatible' => $this->aeCompatible ? 'true' : 'false',
+            'UseAEThresholds' => $this->useAEThresholds ? 'true' : 'false',
+            'PensionablePayCodes' => [
+                'PayCode' => $this->pensionablePayCodes,
+            ],
+            'QualifyingPayCodes' => [
+                'PayCode' => $this->qualifyingPayCodes,
+            ],
+            'MetaData' => $this->metaData->format(),
+        ];
     }
 }
