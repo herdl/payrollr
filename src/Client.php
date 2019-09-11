@@ -5,6 +5,7 @@ namespace B3none\PayRun;
 use B3none\PayRun\Groups\AEAssessmentGroup;
 use B3none\PayRun\Groups\CISGroup;
 use B3none\PayRun\Groups\DpsMessageGroup;
+use B3none\PayRun\Groups\EmployeeGroup;
 use B3none\PayRun\Helpers\GuzzleHelper;
 use GuzzleHttp\Client as GuzzleClient;
 
@@ -55,6 +56,16 @@ class Client
     public function DpsMessage(): DpsMessageGroup
     {
         return new DpsMessageGroup($this->guzzleClient);
+    }
+
+    /**
+     * Get the Employee endpoints.
+     *
+     * @return EmployeeGroup
+     */
+    public function Employee(): EmployeeGroup
+    {
+        return new EmployeeGroup($this->guzzleClient);
     }
 
 
