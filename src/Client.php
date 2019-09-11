@@ -6,6 +6,7 @@ use B3none\PayRun\Groups\AEAssessmentGroup;
 use B3none\PayRun\Groups\CISGroup;
 use B3none\PayRun\Groups\DpsMessageGroup;
 use B3none\PayRun\Groups\EmployeeGroup;
+use B3none\PayRun\Groups\EmployerGroup;
 use B3none\PayRun\Helpers\GuzzleHelper;
 use GuzzleHttp\Client as GuzzleClient;
 
@@ -66,6 +67,16 @@ class Client
     public function Employee(): EmployeeGroup
     {
         return new EmployeeGroup($this->guzzleClient);
+    }
+
+    /**
+     * Get the Employer endpoints.
+     *
+     * @return EmployerGroup
+     */
+    public function Employer(): EmployerGroup
+    {
+        return new EmployerGroup($this->guzzleClient);
     }
 
 
