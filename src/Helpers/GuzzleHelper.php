@@ -19,7 +19,7 @@ class GuzzleHelper
      * @param bool $isTest
      * @return Client
      */
-    public static function create(string $consumerKey, string $consumerSecret, bool $isTest = false)
+    public static function create(string $consumerKey, string $consumerSecret, bool $isTest)
     {
         $stack = HandlerStack::create();
 
@@ -33,6 +33,9 @@ class GuzzleHelper
             'base_uri' => $isTest ? self::TEST_URL : self::BASE_URL,
             'handler' => $stack,
             'auth' => 'oauth',
+            'headers' => [
+                'Accept' => 'application/json'
+            ],
         ]);
     }
 }
