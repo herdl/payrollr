@@ -3,6 +3,7 @@
 namespace B3none\PayRun\Groups;
 
 use GuzzleHttp\Client as GuzzleClient;
+use Psr\Http\Message\ResponseInterface;
 
 class BaseGroup
 {
@@ -19,5 +20,18 @@ class BaseGroup
     public function __construct(GuzzleClient $guzzleClient)
     {
         $this->guzzleClient = $guzzleClient;
+    }
+
+    /**
+     * Get the response data
+     *
+     * @param ResponseInterface $response
+     * @return array
+     */
+    protected function getResponseData(ResponseInterface $response): array
+    {
+        return json_decode(
+            $response->getBody()->getContents(), true
+        );
     }
 }

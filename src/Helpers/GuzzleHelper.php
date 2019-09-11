@@ -34,7 +34,8 @@ class GuzzleHelper
             'handler' => $stack,
             'auth' => 'oauth',
             'headers' => [
-                'Accept' => 'application/json'
+                'content-type' => 'application/json',
+                'accept' => 'application/json'
             ],
         ]);
     }
