@@ -7,6 +7,7 @@ use B3none\PayRun\Groups\CISGroup;
 use B3none\PayRun\Groups\DpsMessageGroup;
 use B3none\PayRun\Groups\EmployeeGroup;
 use B3none\PayRun\Groups\EmployerGroup;
+use B3none\PayRun\Groups\HealthCheckGroup;
 use B3none\PayRun\Helpers\GuzzleHelper;
 use GuzzleHttp\Client as GuzzleClient;
 
@@ -79,5 +80,13 @@ class Client
         return new EmployerGroup($this->guzzleClient);
     }
 
-
+    /**
+     * Get the HealthCheck endpoints.
+     *
+     * @return HealthCheckGroup
+     */
+    public function HealthCheck(): HealthCheckGroup
+    {
+        return new HealthCheckGroup($this->guzzleClient);
+    }
 }
