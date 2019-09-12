@@ -8,6 +8,7 @@ use B3none\PayRun\Groups\DpsMessageGroup;
 use B3none\PayRun\Groups\EmployeeGroup;
 use B3none\PayRun\Groups\EmployerGroup;
 use B3none\PayRun\Groups\HealthCheckGroup;
+use B3none\PayRun\Groups\HolidaySchemeGroup;
 use B3none\PayRun\Helpers\GuzzleHelper;
 use GuzzleHttp\Client as GuzzleClient;
 
@@ -88,5 +89,15 @@ class Client
     public function HealthCheck(): HealthCheckGroup
     {
         return new HealthCheckGroup($this->guzzleClient);
+    }
+
+    /**
+     * Get the HolidaySchedule endpoints.
+     *
+     * @return HolidaySchemeGroup
+     */
+    public function HolidayScheme(): HolidaySchemeGroup
+    {
+        return new HolidaySchemeGroup($this->guzzleClient);
     }
 }
