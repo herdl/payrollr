@@ -63,7 +63,7 @@ class PayLineGroup extends BaseGroup
     /**
      * https://developer.payrun.io/explore/#!/PayLine/GetPayLinesWithTag
      *
-     * Get links to all pay lines for the specified employee
+     * Gets the pay line with the tag
      *
      * @param string $employerId
      * @param string $employeeId
@@ -82,7 +82,7 @@ class PayLineGroup extends BaseGroup
     /**
      * https://developer.payrun.io/explore/#!/PayLine/GetAllPayLineTags
      *
-     * Get links to all pay lines for the specified employee
+     * Gets all the pay line tags
      *
      * @param string $employerId
      * @param string $employeeId
