@@ -9,6 +9,7 @@ use B3none\PayRun\Groups\EmployeeGroup;
 use B3none\PayRun\Groups\EmployerGroup;
 use B3none\PayRun\Groups\HealthCheckGroup;
 use B3none\PayRun\Groups\HolidaySchemeGroup;
+use B3none\PayRun\Groups\JobsGroup;
 use B3none\PayRun\Helpers\GuzzleHelper;
 use GuzzleHttp\Client as GuzzleClient;
 
@@ -100,4 +101,15 @@ class Client
     {
         return new HolidaySchemeGroup($this->guzzleClient);
     }
+
+    /**
+     * Get the Jobs endpoints.
+     *
+     * @return JobsGroup
+     */
+    public function Jobs(): JobsGroup
+    {
+        return new JobsGroup($this->guzzleClient);
+    }
+
 }
