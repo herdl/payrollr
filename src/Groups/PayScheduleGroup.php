@@ -211,5 +211,4 @@ class PayScheduleGroup extends BaseGroup
 
         return $this->getResponseData($response);
     }
-
 }
