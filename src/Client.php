@@ -12,6 +12,20 @@ use B3none\PayRun\Groups\HolidaySchemeGroup;
 use B3none\PayRun\Groups\JobsGroup;
 use B3none\PayRun\Groups\NominalCodeGroup;
 use B3none\PayRun\Groups\PayCodeGroup;
+use B3none\PayRun\Groups\PayInstructionGroup;
+use B3none\PayRun\Groups\PayLineGroup;
+use B3none\PayRun\Groups\PayRunGroup;
+use B3none\PayRun\Groups\PayScheduleGroup;
+use B3none\PayRun\Groups\PensionGroup;
+use B3none\PayRun\Groups\QueryGroup;
+use B3none\PayRun\Groups\ReportLineGroup;
+use B3none\PayRun\Groups\ReportLineInstructionGroup;
+use B3none\PayRun\Groups\ReportsGroup;
+use B3none\PayRun\Groups\RTIGroup;
+use B3none\PayRun\Groups\SchemasGroup;
+use B3none\PayRun\Groups\SubContractorGroup;
+use B3none\PayRun\Groups\TaggingGroup;
+use B3none\PayRun\Groups\TemplatesGroup;
 use B3none\PayRun\Helpers\GuzzleHelper;
 use GuzzleHttp\Client as GuzzleClient;
 
@@ -134,4 +148,143 @@ class Client
         return new PayCodeGroup($this->guzzleClient);
     }
 
+    /**
+     * Get the PayInstruction endpoints.
+     *
+     * @return PayInstructionGroup
+     */
+    public function PayInstruction(): PayInstructionGroup
+    {
+        return new PayInstructionGroup($this->guzzleClient);
+    }
+
+    /**
+     * Get the PayLine endpoints.
+     *
+     * @return PayLineGroup
+     */
+    public function PayLine(): PayLineGroup
+    {
+        return new PayLineGroup($this->guzzleClient);
+    }
+
+    /**
+     * Get the PayRun endpoints.
+     *
+     * @return PayRunGroup
+     */
+    public function PayRun(): PayRunGroup
+    {
+        return new PayRunGroup($this->guzzleClient);
+    }
+
+    /**
+     * Get the PaySchedule endpoints.
+     *
+     * @return PayScheduleGroup
+     */
+    public function PaySchedule(): PayScheduleGroup
+    {
+        return new PayScheduleGroup($this->guzzleClient);
+    }
+
+    /**
+     * Get the Pension endpoints.
+     *
+     * @return PensionGroup
+     */
+    public function Pension(): PensionGroup
+    {
+        return new PensionGroup($this->guzzleClient);
+    }
+
+    /**
+     * Get the Query endpoints.
+     *
+     * @return QueryGroup
+     */
+    public function Query(): QueryGroup
+    {
+        return new QueryGroup($this->guzzleClient);
+    }
+
+    /**
+     * Get the ReportLine endpoints.
+     *
+     * @return ReportLineGroup
+     */
+    public function ReportLine(): ReportLineGroup
+    {
+        return new ReportLineGroup($this->guzzleClient);
+    }
+
+    /**
+     * Get the ReportLineInstruction endpoints.
+     *
+     * @return ReportLineInstructionGroup
+     */
+    public function ReportLineInstruction(): ReportLineInstructionGroup
+    {
+        return new ReportLineInstructionGroup($this->guzzleClient);
+    }
+
+    /**
+     * Get the Reports endpoints.
+     *
+     * @return ReportsGroup
+     */
+    public function Reports(): ReportsGroup
+    {
+        return new ReportsGroup($this->guzzleClient);
+    }
+
+    /**
+     * Get the RTI endpoints.
+     *
+     * @return RTIGroup
+     */
+    public function RTI(): RTIGroup
+    {
+        return new RTIGroup($this->guzzleClient);
+    }
+
+    /**
+     * Get the Schemas endpoints.
+     *
+     * @return SchemasGroup
+     */
+    public function Schemas(): SchemasGroup
+    {
+        return new SchemasGroup($this->guzzleClient);
+    }
+
+    /**
+     * Get the SubContractor endpoints.
+     *
+     * @return SubContractorGroup
+     */
+    public function SubContractor(): SubContractorGroup
+    {
+        return new SubContractorGroup($this->guzzleClient);
+    }
+
+    /**
+     * Get the Tagging endpoints.
+     *
+     * @return TaggingGroup
+     */
+    public function Tagging(): TaggingGroup
+    {
+        return new TaggingGroup($this->guzzleClient);
+    }
+
+    /**
+     * Get the Templates endpoints.
+     *
+     * @return TemplatesGroup
+     */
+    public function Templates(): TemplatesGroup
+    {
+        return new TemplatesGroup($this->guzzleClient);
+    }
 }
