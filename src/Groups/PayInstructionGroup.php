@@ -186,7 +186,7 @@ class PayInstructionGroup extends BaseGroup
      */
     public function deletePayInstruction(string $employerId, string $employeeId, string $payInstructionId, array $payInstruction): array
     {
-        $response = $this->guzzleClient->put(
+        $response = $this->guzzleClient->delete(
             "/Employer/{$employerId}/Employee/{$employeeId}/PayInstructions/{$payInstructionId}",
             [
                 'body' => [
