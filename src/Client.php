@@ -10,6 +10,7 @@ use B3none\PayRun\Groups\EmployerGroup;
 use B3none\PayRun\Groups\HealthCheckGroup;
 use B3none\PayRun\Groups\HolidaySchemeGroup;
 use B3none\PayRun\Groups\JobsGroup;
+use B3none\PayRun\Groups\NominalCodeGroup;
 use B3none\PayRun\Helpers\GuzzleHelper;
 use GuzzleHttp\Client as GuzzleClient;
 
@@ -110,6 +111,16 @@ class Client
     public function Jobs(): JobsGroup
     {
         return new JobsGroup($this->guzzleClient);
+    }
+
+    /**
+     * Get the NominalCode endpoints.
+     *
+     * @return NominalCodeGroup
+     */
+    public function NominalCode(): NominalCodeGroup
+    {
+        return new NominalCodeGroup($this->guzzleClient);
     }
 
 }
