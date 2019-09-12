@@ -249,7 +249,7 @@ class PayCodeGroup extends BaseGroup
      */
     public function deletePayCode(string $employerId, string $payCodeId): array
     {
-        $response = $this->guzzleClient->post(
+        $response = $this->guzzleClient->delete(
             "/Employer/{$employerId}/PayCode/{$payCodeId}"
         );
 
@@ -268,7 +268,7 @@ class PayCodeGroup extends BaseGroup
      */
     public function deletePayCodeRevision(string $employerId, string $payCodeId, string $effectiveDate): array
     {
-        $response = $this->guzzleClient->post(
+        $response = $this->guzzleClient->delete(
             "/Employer/{$employerId}/PayCode/{$payCodeId}/{$effectiveDate}"
         );
 
@@ -287,7 +287,7 @@ class PayCodeGroup extends BaseGroup
      */
     public function deletePayCodeRevisionByNumber(string $employerId, string $payCodeId, string $revisionNumber): array
     {
-        $response = $this->guzzleClient->post(
+        $response = $this->guzzleClient->delete(
             "/Employer/{$employerId}/PayCode/{$payCodeId}/Revision/{$revisionNumber}"
         );
 
