@@ -114,19 +114,19 @@ class HolidaySchemeModel
      * @param array|null $accrualPayCodes
      */
     public function __construct(
-      ?int $effectiveDate = null,
-      ?int $revision = null,
-      ?string $code = null,
-      ?string $schemeKey = null,
-      ?string $schemeName = null,
-      ?int $schemeCeasedDate = null,
-      ?int $yearStartMonth = null,
-      ?int $yearStartDay = null,
-      ?float $annualEntitlementWeeks = null,
-      ?float $maxCarryOverDays = null,
-      ?bool $allowNegativeBalance = null,
-      ?bool $bankHolidayInclusive = null,
-      ?array $accrualPayCodes = null
+        ?int $effectiveDate = null,
+        ?int $revision = null,
+        ?string $code = null,
+        ?string $schemeKey = null,
+        ?string $schemeName = null,
+        ?int $schemeCeasedDate = null,
+        ?int $yearStartMonth = null,
+        ?int $yearStartDay = null,
+        ?float $annualEntitlementWeeks = null,
+        ?float $maxCarryOverDays = null,
+        ?bool $allowNegativeBalance = null,
+        ?bool $bankHolidayInclusive = null,
+        ?array $accrualPayCodes = null
     ) {
         if ($effectiveDate) {
             $this->effectiveDate = $effectiveDate;
