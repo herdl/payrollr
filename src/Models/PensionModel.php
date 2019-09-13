@@ -1,6 +1,6 @@
 <?php
 
-namespace B3none\PayRun\Models;
+namespace Herdl\PayRun\Models;
 
 /**
  * https://developer.payrun.io/docs/reference/pension/index.html#pension

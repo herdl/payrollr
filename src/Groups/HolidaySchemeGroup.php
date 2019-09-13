@@ -1,6 +1,6 @@
 <?php
 
-namespace B3none\PayRun\Groups;
+namespace Herdl\PayRun\Groups;
 
 class HolidaySchemeGroup extends BaseGroup
 {

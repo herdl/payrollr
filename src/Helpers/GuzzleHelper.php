@@ -1,6 +1,6 @@
 <?php
 
-namespace B3none\PayRun\Helpers;
+namespace Herdl\PayRun\Helpers;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\HandlerStack;

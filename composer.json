@@ -1,16 +1,16 @@
 {
-    "name": "b3none/php-payrunio",
+    "name": "herdl/php-payrunio",
     "description": "A PHP client for the PayRun.io API",
     "type": "library",
     "authors": [
         {
             "name": "B3none",
-            "email": "ablackham2000@gmail.com"
+            "email": "alex@herdl.com"
         }
     ],
     "autoload": {
         "psr-4": {
-            "B3none\\PayRun\\": "src/"
+            "Herdl\\PayRun\\": "src/"
         }
     },
     "require": {

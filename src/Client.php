@@ -1,32 +1,32 @@
 <?php
 
-namespace B3none\PayRun;
+namespace Herdl\PayRun;
 
-use B3none\PayRun\Groups\AEAssessmentGroup;
-use B3none\PayRun\Groups\CISGroup;
-use B3none\PayRun\Groups\DpsMessageGroup;
-use B3none\PayRun\Groups\EmployeeGroup;
-use B3none\PayRun\Groups\EmployerGroup;
-use B3none\PayRun\Groups\HealthCheckGroup;
-use B3none\PayRun\Groups\HolidaySchemeGroup;
-use B3none\PayRun\Groups\JobsGroup;
-use B3none\PayRun\Groups\NominalCodeGroup;
-use B3none\PayRun\Groups\PayCodeGroup;
-use B3none\PayRun\Groups\PayInstructionGroup;
-use B3none\PayRun\Groups\PayLineGroup;
-use B3none\PayRun\Groups\PayRunGroup;
-use B3none\PayRun\Groups\PayScheduleGroup;
-use B3none\PayRun\Groups\PensionGroup;
-use B3none\PayRun\Groups\QueryGroup;
-use B3none\PayRun\Groups\ReportLineGroup;
-use B3none\PayRun\Groups\ReportLineInstructionGroup;
-use B3none\PayRun\Groups\ReportsGroup;
-use B3none\PayRun\Groups\RTIGroup;
-use B3none\PayRun\Groups\SchemasGroup;
-use B3none\PayRun\Groups\SubContractorGroup;
-use B3none\PayRun\Groups\TaggingGroup;
-use B3none\PayRun\Groups\TemplatesGroup;
-use B3none\PayRun\Helpers\GuzzleHelper;
+use Herdl\PayRun\Groups\AEAssessmentGroup;
+use Herdl\PayRun\Groups\CISGroup;
+use Herdl\PayRun\Groups\DpsMessageGroup;
+use Herdl\PayRun\Groups\EmployeeGroup;
+use Herdl\PayRun\Groups\EmployerGroup;
+use Herdl\PayRun\Groups\HealthCheckGroup;
+use Herdl\PayRun\Groups\HolidaySchemeGroup;
+use Herdl\PayRun\Groups\JobsGroup;
+use Herdl\PayRun\Groups\NominalCodeGroup;
+use Herdl\PayRun\Groups\PayCodeGroup;
+use Herdl\PayRun\Groups\PayInstructionGroup;
+use Herdl\PayRun\Groups\PayLineGroup;
+use Herdl\PayRun\Groups\PayRunGroup;
+use Herdl\PayRun\Groups\PayScheduleGroup;
+use Herdl\PayRun\Groups\PensionGroup;
+use Herdl\PayRun\Groups\QueryGroup;
+use Herdl\PayRun\Groups\ReportLineGroup;
+use Herdl\PayRun\Groups\ReportLineInstructionGroup;
+use Herdl\PayRun\Groups\ReportsGroup;
+use Herdl\PayRun\Groups\RTIGroup;
+use Herdl\PayRun\Groups\SchemasGroup;
+use Herdl\PayRun\Groups\SubContractorGroup;
+use Herdl\PayRun\Groups\TaggingGroup;
+use Herdl\PayRun\Groups\TemplatesGroup;
+use Herdl\PayRun\Helpers\GuzzleHelper;
 use GuzzleHttp\Client as GuzzleClient;
 
 class Client
