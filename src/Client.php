@@ -53,7 +53,7 @@ class Client
      *
      * @return AEAssessmentGroup
      */
-    public function AEAssessment(): AEAssessmentGroup
+    public function aeAssessment(): AEAssessmentGroup
     {
         return new AEAssessmentGroup($this->guzzleClient);
     }
@@ -63,7 +63,7 @@ class Client
      *
      * @return CISGroup
      */
-    public function CIS(): CISGroup
+    public function cis(): CISGroup
     {
         return new CISGroup($this->guzzleClient);
     }
@@ -73,7 +73,7 @@ class Client
      *
      * @return DpsMessageGroup
      */
-    public function DpsMessage(): DpsMessageGroup
+    public function dpsMessage(): DpsMessageGroup
     {
         return new DpsMessageGroup($this->guzzleClient);
     }
@@ -83,7 +83,7 @@ class Client
      *
      * @return EmployeeGroup
      */
-    public function Employee(): EmployeeGroup
+    public function employee(): EmployeeGroup
     {
         return new EmployeeGroup($this->guzzleClient);
     }
@@ -93,7 +93,7 @@ class Client
      *
      * @return EmployerGroup
      */
-    public function Employer(): EmployerGroup
+    public function employer(): EmployerGroup
     {
         return new EmployerGroup($this->guzzleClient);
     }
@@ -103,7 +103,7 @@ class Client
      *
      * @return HealthCheckGroup
      */
-    public function HealthCheck(): HealthCheckGroup
+    public function healthCheck(): HealthCheckGroup
     {
         return new HealthCheckGroup($this->guzzleClient);
     }
@@ -113,7 +113,7 @@ class Client
      *
      * @return HolidaySchemeGroup
      */
-    public function HolidayScheme(): HolidaySchemeGroup
+    public function holidayScheme(): HolidaySchemeGroup
     {
         return new HolidaySchemeGroup($this->guzzleClient);
     }
@@ -123,7 +123,7 @@ class Client
      *
      * @return JobsGroup
      */
-    public function Jobs(): JobsGroup
+    public function jobs(): JobsGroup
     {
         return new JobsGroup($this->guzzleClient);
     }
@@ -133,7 +133,7 @@ class Client
      *
      * @return NominalCodeGroup
      */
-    public function NominalCode(): NominalCodeGroup
+    public function nominalCode(): NominalCodeGroup
     {
         return new NominalCodeGroup($this->guzzleClient);
     }
@@ -143,7 +143,7 @@ class Client
      *
      * @return PayCodeGroup
      */
-    public function PayCode(): PayCodeGroup
+    public function payCode(): PayCodeGroup
     {
         return new PayCodeGroup($this->guzzleClient);
     }
@@ -153,7 +153,7 @@ class Client
      *
      * @return PayInstructionGroup
      */
-    public function PayInstruction(): PayInstructionGroup
+    public function payInstruction(): PayInstructionGroup
     {
         return new PayInstructionGroup($this->guzzleClient);
     }
@@ -163,7 +163,7 @@ class Client
      *
      * @return PayLineGroup
      */
-    public function PayLine(): PayLineGroup
+    public function payLine(): PayLineGroup
     {
         return new PayLineGroup($this->guzzleClient);
     }
@@ -173,7 +173,7 @@ class Client
      *
      * @return PayRunGroup
      */
-    public function PayRun(): PayRunGroup
+    public function payRun(): PayRunGroup
     {
         return new PayRunGroup($this->guzzleClient);
     }
@@ -183,7 +183,7 @@ class Client
      *
      * @return PayScheduleGroup
      */
-    public function PaySchedule(): PayScheduleGroup
+    public function paySchedule(): PayScheduleGroup
     {
         return new PayScheduleGroup($this->guzzleClient);
     }
@@ -193,7 +193,7 @@ class Client
      *
      * @return PensionGroup
      */
-    public function Pension(): PensionGroup
+    public function pension(): PensionGroup
     {
         return new PensionGroup($this->guzzleClient);
     }
@@ -203,7 +203,7 @@ class Client
      *
      * @return QueryGroup
      */
-    public function Query(): QueryGroup
+    public function query(): QueryGroup
     {
         return new QueryGroup($this->guzzleClient);
     }
@@ -213,7 +213,7 @@ class Client
      *
      * @return ReportLineGroup
      */
-    public function ReportLine(): ReportLineGroup
+    public function reportLine(): ReportLineGroup
     {
         return new ReportLineGroup($this->guzzleClient);
     }
@@ -223,7 +223,7 @@ class Client
      *
      * @return ReportLineInstructionGroup
      */
-    public function ReportLineInstruction(): ReportLineInstructionGroup
+    public function reportLineInstruction(): ReportLineInstructionGroup
     {
         return new ReportLineInstructionGroup($this->guzzleClient);
     }
@@ -233,7 +233,7 @@ class Client
      *
      * @return ReportsGroup
      */
-    public function Reports(): ReportsGroup
+    public function reports(): ReportsGroup
     {
         return new ReportsGroup($this->guzzleClient);
     }
@@ -243,7 +243,7 @@ class Client
      *
      * @return RTIGroup
      */
-    public function RTI(): RTIGroup
+    public function rti(): RTIGroup
     {
         return new RTIGroup($this->guzzleClient);
     }
@@ -253,7 +253,7 @@ class Client
      *
      * @return SchemasGroup
      */
-    public function Schemas(): SchemasGroup
+    public function schemas(): SchemasGroup
     {
         return new SchemasGroup($this->guzzleClient);
     }
@@ -263,7 +263,7 @@ class Client
      *
      * @return SubContractorGroup
      */
-    public function SubContractor(): SubContractorGroup
+    public function subContractor(): SubContractorGroup
     {
         return new SubContractorGroup($this->guzzleClient);
     }
@@ -273,7 +273,7 @@ class Client
      *
      * @return TaggingGroup
      */
-    public function Tagging(): TaggingGroup
+    public function tagging(): TaggingGroup
     {
         return new TaggingGroup($this->guzzleClient);
     }
@@ -283,7 +283,7 @@ class Client
      *
      * @return TemplatesGroup
      */
-    public function Templates(): TemplatesGroup
+    public function templates(): TemplatesGroup
     {
         return new TemplatesGroup($this->guzzleClient);
     }
