@@ -87,6 +87,79 @@ class PayRunModel
     protected $sequence;
 
     /**
+     * PayRunModel constructor.
+     *
+     * @param string|null $payFrequency
+     * @param int|null $paymentDate
+     * @param int|null $periodStart
+     * @param int|null $periodEnd
+     * @param int|null $executed
+     * @param int|null $taxYear
+     * @param int|null $taxPeriod
+     * @param bool|null $isSupplementary
+     * @param LinkModel|null $paySchedule
+     * @param LinkModel|null $proceedingPayRun
+     * @param int|null $sequence
+     */
+    public function __construct(
+        ?string $payFrequency = null,
+        ?int $paymentDate = null,
+        ?int $periodStart = null,
+        ?int $periodEnd = null,
+        ?int $executed = null,
+        ?int $taxYear = null,
+        ?int $taxPeriod = null,
+        ?bool $isSupplementary = null,
+        ?LinkModel $paySchedule = null,
+        ?LinkModel $proceedingPayRun = null,
+        ?int $sequence = null
+    ) {
+        if ($payFrequency) {
+            $this->payFrequency = $payFrequency;
+        }
+
+        if ($paymentDate) {
+            $this->paymentDate = $paymentDate;
+        }
+
+        if ($periodStart) {
+            $this->periodStart = $periodStart;
+        }
+
+        if ($periodEnd) {
+            $this->periodEnd = $periodEnd;
+        }
+
+        if ($executed) {
+            $this->executed = $executed;
+        }
+
+        if ($taxYear) {
+            $this->taxYear = $taxYear;
+        }
+
+        if ($taxPeriod) {
+            $this->taxPeriod = $taxPeriod;
+        }
+
+        if ($isSupplementary) {
+            $this->isSupplementary = $isSupplementary;
+        }
+
+        if ($paySchedule) {
+            $this->paySchedule = $paySchedule;
+        }
+
+        if ($proceedingPayRun) {
+            $this->proceedingPayRun = $proceedingPayRun;
+        }
+
+        if ($sequence) {
+            $this->sequence = $sequence;
+        }
+    }
+
+    /**
      * @param string $payFrequency
      * @return PayRunModel
      */

@@ -32,8 +32,11 @@ class SubContractorGroup extends BaseGroup
      * @param string $effectiveDate
      * @return array
      */
-    public function getSubContractorByEffectiveDate(string $employerId, string $subContractorId, string $effectiveDate): array
-    {
+    public function getSubContractorByEffectiveDate(
+        string $employerId,
+        string $subContractorId,
+        string $effectiveDate
+    ): array {
         $response = $this->guzzleClient->get(
             "/Employer/{$employerId}/SubContractor/{$subContractorId}/{$effectiveDate}"
         );
@@ -51,8 +54,11 @@ class SubContractorGroup extends BaseGroup
      * @param string $revisionNumber
      * @return array
      */
-    public function getSubContractorRevisionByNumber(string $employerId, string $subContractorId, string $revisionNumber): array
-    {
+    public function getSubContractorRevisionByNumber(
+        string $employerId,
+        string $subContractorId,
+        string $revisionNumber
+    ): array {
         $response = $this->guzzleClient->get(
             "/Employer/{$employerId}/SubContractor/{$subContractorId}/Revision/{$revisionNumber}"
         );
@@ -170,8 +176,11 @@ class SubContractorGroup extends BaseGroup
      * @param array $subContractor
      * @return array
      */
-    public function putSubContractorIntoEmployer(string $employerId, string $subContractorId, array $subContractor): array
-    {
+    public function putSubContractorIntoEmployer(
+        string $employerId,
+        string $subContractorId,
+        array $subContractor
+    ): array {
         $response = $this->guzzleClient->put(
             "/Employer/{$employerId}/SubContractor/{$subContractorId}",
             [
@@ -212,8 +221,11 @@ class SubContractorGroup extends BaseGroup
      * @param string $effectiveDate
      * @return array
      */
-    public function deleteSubContractorRevision(string $employerId, string $subContractorId, string $effectiveDate): array
-    {
+    public function deleteSubContractorRevision(
+        string $employerId,
+        string $subContractorId,
+        string $effectiveDate
+    ): array {
         $response = $this->guzzleClient->delete(
             "/Employer/{$employerId}/SubContractor/{$subContractorId}/{$effectiveDate}"
         );
@@ -231,8 +243,11 @@ class SubContractorGroup extends BaseGroup
      * @param string $revisionNumber
      * @return array
      */
-    public function deleteSubContractorRevisionByNumber(string $employerId, string $subContractorId, string $revisionNumber): array
-    {
+    public function deleteSubContractorRevisionByNumber(
+        string $employerId,
+        string $subContractorId,
+        string $revisionNumber
+    ): array {
         $response = $this->guzzleClient->delete(
             "/Employer/{$employerId}/SubContractor/{$subContractorId}/Revision/{$revisionNumber}"
         );

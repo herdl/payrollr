@@ -31,7 +31,8 @@ class BaseGroup
     protected function getResponseData(ResponseInterface $response): array
     {
         return json_decode(
-            $response->getBody()->getContents(), true
+            $response->getBody()->getContents(),
+            true
         );
     }
 }

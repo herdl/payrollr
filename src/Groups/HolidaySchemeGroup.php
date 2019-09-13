@@ -32,8 +32,11 @@ class HolidaySchemeGroup extends BaseGroup
      * @param string $effectiveDate
      * @return array
      */
-    public function getHolidaySchemeByEffectiveDate(string $employerId, string $holidaySchemeId, string $effectiveDate): array
-    {
+    public function getHolidaySchemeByEffectiveDate(
+        string $employerId,
+        string $holidaySchemeId,
+        string $effectiveDate
+    ): array {
         $response = $this->guzzleClient->get(
             "/Employer/{$employerId}/HolidayScheme/{$holidaySchemeId}/{$effectiveDate}"
         );
@@ -51,8 +54,11 @@ class HolidaySchemeGroup extends BaseGroup
      * @param string $revisionNumber
      * @return array
      */
-    public function getHolidaySchemeRevisionByNumber(string $employerId, string $holidaySchemeId, string $revisionNumber): array
-    {
+    public function getHolidaySchemeRevisionByNumber(
+        string $employerId,
+        string $holidaySchemeId,
+        string $revisionNumber
+    ): array {
         $response = $this->guzzleClient->get(
             "/Employer/{$employerId}/HolidayScheme/{$holidaySchemeId}/Revision/{$revisionNumber}"
         );
@@ -211,8 +217,11 @@ class HolidaySchemeGroup extends BaseGroup
      * @param string $effectiveDate
      * @return array
      */
-    public function deleteHolidaySchemeRevision(string $employerId, string $holidaySchemeId, string $effectiveDate): array
-    {
+    public function deleteHolidaySchemeRevision(
+        string $employerId,
+        string $holidaySchemeId,
+        string $effectiveDate
+    ): array {
         $response = $this->guzzleClient->delete(
             "/Employer/{$employerId}/HolidayScheme/{$holidaySchemeId}/{$effectiveDate}"
         );
@@ -230,8 +239,11 @@ class HolidaySchemeGroup extends BaseGroup
      * @param string $revisionNumber
      * @return array
      */
-    public function deleteHolidaySchemeRevisionByNumber(string $employerId, string $holidaySchemeId, string $revisionNumber): array
-    {
+    public function deleteHolidaySchemeRevisionByNumber(
+        string $employerId,
+        string $holidaySchemeId,
+        string $revisionNumber
+    ): array {
         $response = $this->guzzleClient->delete(
             "/Employer/{$employerId}/HolidayScheme/{$holidaySchemeId}/Revision/{$revisionNumber}"
         );

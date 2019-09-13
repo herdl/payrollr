@@ -106,8 +106,12 @@ class TaggingGroup extends BaseGroup
      * @param string $tagId
      * @return array
      */
-    public function getTagFromPayInstruction(string $employerId, string $employeeId, string $payInstructionId, string $tagId): array
-    {
+    public function getTagFromPayInstruction(
+        string $employerId,
+        string $employeeId,
+        string $payInstructionId,
+        string $tagId
+    ): array {
         $response = $this->guzzleClient->get(
             "/Employer/{$employerId}/Employee/{$employeeId}/PayInstruction/{$payInstructionId}/Tag/{$tagId}"
         );
@@ -125,8 +129,11 @@ class TaggingGroup extends BaseGroup
      * @param string $payInstructionId
      * @return array
      */
-    public function getTagsFromPayInstruction(string $employerId, string $employeeId, string $payInstructionId): array
-    {
+    public function getTagsFromPayInstruction(
+        string $employerId,
+        string $employeeId,
+        string $payInstructionId
+    ): array {
         $response = $this->guzzleClient->get(
             "/Employer/{$employerId}/Employee/{$employeeId}/PayInstruction/{$payInstructionId}/Tags"
         );
@@ -145,8 +152,11 @@ class TaggingGroup extends BaseGroup
      * @param string $tagId
      * @return array
      */
-    public function getPayInstructionWithTag(string $employerId, string $employeeId, string $payInstructionId, string $tagId): array
-    {
+    public function getPayInstructionWithTag(
+        string $employerId,
+        string $employeeId,
+        string $tagId
+    ): array {
         $response = $this->guzzleClient->get(
             "/Employer/{$employerId}/Employee/{$employeeId}/PayInstruction/Tag/{$tagId}"
         );
@@ -161,11 +171,10 @@ class TaggingGroup extends BaseGroup
      *
      * @param string $employerId
      * @param string $employeeId
-     * @param string $payInstructionId
      * @param string $tagId
      * @return array
      */
-    public function getPayInstructionsWithTag(string $employerId, string $employeeId, string $payInstructionId, string $tagId): array
+    public function getPayInstructionsWithTag(string $employerId, string $employeeId, string $tagId): array
     {
         $response = $this->guzzleClient->get(
             "/Employer/{$employerId}/Employee/{$employeeId}/PayInstructions/Tag/{$tagId}"
@@ -318,8 +327,12 @@ class TaggingGroup extends BaseGroup
      * @param string $effectiveDate
      * @return array
      */
-    public function getTagFromEmployeeRevision(string $employerId, string $employeeId, string $tagId, string $effectiveDate): array
-    {
+    public function getTagFromEmployeeRevision(
+        string $employerId,
+        string $employeeId,
+        string $tagId,
+        string $effectiveDate
+    ): array {
         $response = $this->guzzleClient->get(
             "/Employer/{$employerId}/Employee/{$employeeId}/Tag/{$tagId}/{$effectiveDate}"
         );
@@ -430,8 +443,12 @@ class TaggingGroup extends BaseGroup
      * @param string $effectiveDate
      * @return array
      */
-    public function getTagFromHolidaySchemeRevision(string $employerId, string $holidaySchemeId, string $tagId, string $effectiveDate): array
-    {
+    public function getTagFromHolidaySchemeRevision(
+        string $employerId,
+        string $holidaySchemeId,
+        string $tagId,
+        string $effectiveDate
+    ): array {
         $response = $this->guzzleClient->get(
             "/Employer/{$employerId}/HolidayScheme/{$holidaySchemeId}/Tag/{$tagId}/{$effectiveDate}"
         );
@@ -467,8 +484,11 @@ class TaggingGroup extends BaseGroup
      * @param string $effectiveDate
      * @return array
      */
-    public function getTagsFromHolidaySchemeRevision(string $employerId, string $holidaySchemeId, string $effectiveDate): array
-    {
+    public function getTagsFromHolidaySchemeRevision(
+        string $employerId,
+        string $holidaySchemeId,
+        string $effectiveDate
+    ): array {
         $response = $this->guzzleClient->get(
             "/Employer/{$employerId}/HolidayScheme/{$holidaySchemeId}/Tags/{$effectiveDate}"
         );
@@ -833,8 +853,12 @@ class TaggingGroup extends BaseGroup
      * @param string $tagId
      * @return array
      */
-    public function getTagFromCisInstruction(string $employerId, string $subContractorId, string $cisInstructionId, string $tagId): array
-    {
+    public function getTagFromCisInstruction(
+        string $employerId,
+        string $subContractorId,
+        string $cisInstructionId,
+        string $tagId
+    ): array {
         $response = $this->guzzleClient->get(
             "/Employer/{$employerId}/SubContractor/{$subContractorId}/CisInstruction/{$cisInstructionId}/Tag/{$tagId}"
         );
@@ -852,8 +876,11 @@ class TaggingGroup extends BaseGroup
      * @param string $cisInstructionId
      * @return array
      */
-    public function getTagsFromCisInstruction(string $employerId, string $subContractorId, string $cisInstructionId): array
-    {
+    public function getTagsFromCisInstruction(
+        string $employerId,
+        string $subContractorId,
+        string $cisInstructionId
+    ): array {
         $response = $this->guzzleClient->get(
             "/Employer/{$employerId}/SubContractor/{$subContractorId}/CisInstruction/{$cisInstructionId}/Tags"
         );
@@ -928,8 +955,12 @@ class TaggingGroup extends BaseGroup
      * @param string $tagId
      * @return array
      */
-    public function getTagFromCisLine(string $employerId, string $subContractorId, string $cisLineId, string $tagId): array
-    {
+    public function getTagFromCisLine(
+        string $employerId,
+        string $subContractorId,
+        string $cisLineId,
+        string $tagId
+    ): array {
         $response = $this->guzzleClient->get(
             "/Employer/{$employerId}/SubContractor/{$subContractorId}/CisLine/{$cisLineId}/Tag/{$tagId}"
         );
@@ -1042,8 +1073,12 @@ class TaggingGroup extends BaseGroup
      * @param string $effectiveDate
      * @return array
      */
-    public function getTagFromSubContractorRevision(string $employerId, string $subContractorId, string $tagId, string $effectiveDate): array
-    {
+    public function getTagFromSubContractorRevision(
+        string $employerId,
+        string $subContractorId,
+        string $tagId,
+        string $effectiveDate
+    ): array {
         $response = $this->guzzleClient->get(
             "/Employer/{$employerId}/SubContractor/{$subContractorId}/Tag/{$tagId}/{$effectiveDate}"
         );
@@ -1079,8 +1114,11 @@ class TaggingGroup extends BaseGroup
      * @param string $effectiveDate
      * @return array
      */
-    public function getTagsFromSubContractorRevision(string $employerId, string $subContractorId, string $effectiveDate): array
-    {
+    public function getTagsFromSubContractorRevision(
+        string $employerId,
+        string $subContractorId,
+        string $effectiveDate
+    ): array {
         $response = $this->guzzleClient->get(
             "/Employer/{$employerId}/SubContractor/{$subContractorId}/Tags/{$effectiveDate}"
         );
@@ -1276,8 +1314,12 @@ class TaggingGroup extends BaseGroup
      * @param string $tagId
      * @return array
      */
-    public function putPayInstructionTag(string $employerId, string $employeeId, string $payInstructionId, string $tagId): array
-    {
+    public function putPayInstructionTag(
+        string $employerId,
+        string $employeeId,
+        string $payInstructionId,
+        string $tagId
+    ): array {
         $response = $this->guzzleClient->put(
             "/Employer/{$employerId}/Employee/{$employeeId}/PayInstruction/{$payInstructionId}/Tag/{$tagId}"
         );
@@ -1296,8 +1338,12 @@ class TaggingGroup extends BaseGroup
      * @param string $tagId
      * @return array
      */
-    public function putPayLineTag(string $employerId, string $employeeId, string $payLineId, string $tagId): array
-    {
+    public function putPayLineTag(
+        string $employerId,
+        string $employeeId,
+        string $payLineId,
+        string $tagId
+    ): array {
         $response = $this->guzzleClient->put(
             "/Employer/{$employerId}/Employee/{$employeeId}/PayLine/{$payLineId}/Tag/{$tagId}"
         );
@@ -1526,8 +1572,12 @@ class TaggingGroup extends BaseGroup
      * @param string $tagId
      * @return array
      */
-    public function deletePayInstructionTag(string $employerId, string $employeeId, string $payInstructionId, string $tagId): array
-    {
+    public function deletePayInstructionTag(
+        string $employerId,
+        string $employeeId,
+        string $payInstructionId,
+        string $tagId
+    ): array {
         $response = $this->guzzleClient->delete(
             "/Employer/{$employerId}/Employee/{$employeeId}/PayInstruction/{$payInstructionId}/Tag/{$tagId}"
         );
@@ -1639,11 +1689,10 @@ class TaggingGroup extends BaseGroup
      *
      * @param string $employerId
      * @param string $payScheduleId
-     * @param string $payRunId
      * @param string $tagId
      * @return array
      */
-    public function deletePayScheduleTag(string $employerId, string $payScheduleId, string $payRunId, string $tagId): array
+    public function deletePayScheduleTag(string $employerId, string $payScheduleId, string $tagId): array
     {
         $response = $this->guzzleClient->delete(
             "/Employer/{$employerId}/PaySchedule/{$payScheduleId}/Tag/{$tagId}"
@@ -1682,8 +1731,12 @@ class TaggingGroup extends BaseGroup
      * @param string $tagId
      * @return array
      */
-    public function deleteCisInstructionTag(string $employerId, string $subContractorId, string $cisInstructionId, string $tagId): array
-    {
+    public function deleteCisInstructionTag(
+        string $employerId,
+        string $subContractorId,
+        string $cisInstructionId,
+        string $tagId
+    ): array {
         $response = $this->guzzleClient->delete(
             "/Employer/{$employerId}/SubContractor/{$subContractorId}/CisInstruction/{$cisInstructionId}/Tag/{$tagId}"
         );
@@ -1702,8 +1755,12 @@ class TaggingGroup extends BaseGroup
      * @param string $tagId
      * @return array
      */
-    public function deleteCisLineTag(string $employerId, string $subContractorId, string $cisLineId, string $tagId): array
-    {
+    public function deleteCisLineTag(
+        string $employerId,
+        string $subContractorId,
+        string $cisLineId,
+        string $tagId
+    ): array {
         $response = $this->guzzleClient->delete(
             "/Employer/{$employerId}/SubContractor/{$subContractorId}/CisLine/{$cisLineId}/Tag/{$tagId}"
         );

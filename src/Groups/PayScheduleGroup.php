@@ -50,8 +50,11 @@ class PayScheduleGroup extends BaseGroup
      * @param string $effectiveDate
      * @return array
      */
-    public function getEmployeesFromPayScheduleOnEffectiveDate(string $employerId, string $payScheduleId, string $effectiveDate): array
-    {
+    public function getEmployeesFromPayScheduleOnEffectiveDate(
+        string $employerId,
+        string $payScheduleId,
+        string $effectiveDate
+    ): array {
         $response = $this->guzzleClient->get(
             "/Employer/{$employerId}/PaySchedule/{$payScheduleId}/Employees/{$effectiveDate}"
         );

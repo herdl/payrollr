@@ -472,7 +472,8 @@ class ReportsGroup extends BaseGroup
     /**
      * https://developer.payrun.io/explore/#!/Reports/GetPapdisReportOuput
      *
-     * Returns the result of the executed PAPDIS report. PAPDIS is a free and open data interface standard designed to allow payroll and middleware software developers to create a file that can be used by pension providers to exchange data. http://www.papdis.org
+     * Returns the result of the executed PAPDIS report.
+     * PAPDIS is a free and open data interface standard designed to allow payroll and middleware software developers to create a file that can be used by pension providers to exchange data. http://www.papdis.org
      *
      * @param string $employerKey
      * @param string $payScheduleKey
@@ -513,7 +514,8 @@ class ReportsGroup extends BaseGroup
     /**
      * https://developer.payrun.io/explore/#!/Reports/GetPassReportOuput
      *
-     * Returns the result of the executed PASS report. PASS stands for Payroll and Systemsync. PASS 1.1 is an extension of the PAPDIS V1.1 schema. https://pensionsynckb.systemsyncsolutions.com/display/PKB/PASS+1.1
+     * Returns the result of the executed PASS report. PASS stands for Payroll and Systemsync.
+     * PASS 1.1 is an extension of the PAPDIS V1.1 schema. https://pensionsynckb.systemsyncsolutions.com/display/PKB/PASS+1.1
      *
      * @param string $employerKey
      * @param string $payScheduleKey
@@ -557,7 +559,8 @@ class ReportsGroup extends BaseGroup
     /**
      * https://developer.payrun.io/explore/#!/Reports/GetPayDashboardPayslipReportOuput
      *
-     * Returns the result of the executed Pay Dashboard payslip report for the given query parameters. See https://api.paydashboard.com for details. For compatability should be returned as JSON with TransformDefinitionKey=Json-Clean.
+     * Returns the result of the executed Pay Dashboard payslip report for the given query parameters.
+     * See https://api.paydashboard.com for details. For compatibility should be returned as JSON with TransformDefinitionKey=Json-Clean.
      *
      * @param string $employerKey
      * @param string $payScheduleKey
@@ -604,7 +607,8 @@ class ReportsGroup extends BaseGroup
     /**
      * https://developer.payrun.io/explore/#!/Reports/GetPayslip3ReportOutput
      *
-     * Returns the result of the executed Pay Dashboard payslip report for the given query parameters. See https://api.paydashboard.com for details. For compatability should be returned as JSON with TransformDefinitionKey=Json-Clean.
+     * Returns the result of the executed Pay Dashboard payslip report for the given query parameters.
+     * See https://api.paydashboard.com for details. For compatibility should be returned as JSON with TransformDefinitionKey=Json-Clean.
      *
      * @param string $employerKey
      * @param string $payScheduleKey

@@ -72,8 +72,11 @@ class ReportLineInstructionGroup extends BaseGroup
      * @param array $reportingInstruction
      * @return array
      */
-    public function putReportingInstruction(string $employerId, string $reportingInstructionId, array $reportingInstruction): array
-    {
+    public function putReportingInstruction(
+        string $employerId,
+        string $reportingInstructionId,
+        array $reportingInstruction
+    ): array {
         $response = $this->guzzleClient->put(
             "/Employer/{$employerId}/ReportingInstruction/{$reportingInstructionId}",
             [

@@ -90,8 +90,12 @@ class PayRunGroup extends BaseGroup
      * @param string $employeeId
      * @return array
      */
-    public function getCommentaryFromPayRunByEmployee(string $employerId, string $payScheduleId, string $payRunId, string $employeeId): array
-    {
+    public function getCommentaryFromPayRunByEmployee(
+        string $employerId,
+        string $payScheduleId,
+        string $payRunId,
+        string $employeeId
+    ): array {
         $response = $this->guzzleClient->get(
             "/Employer/{$employerId}/PaySchedule/{$payScheduleId}/PayRun/{$payRunId}/Employee/{$employeeId}/Commentary"
         );
@@ -222,8 +226,12 @@ class PayRunGroup extends BaseGroup
      * @param string $employeeId
      * @return array
      */
-    public function deletePayRunEmployee(string $employerId, string $payScheduleId, string $payRunId, string $employeeId): array
-    {
+    public function deletePayRunEmployee(
+        string $employerId,
+        string $payScheduleId,
+        string $payRunId,
+        string $employeeId
+    ): array {
         $response = $this->guzzleClient->delete(
             "/Employer/{$employerId}/PaySchedule/{$payScheduleId}/PayRun/{$payRunId}/Employee/{$employeeId}"
         );

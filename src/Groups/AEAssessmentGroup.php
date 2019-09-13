@@ -95,8 +95,12 @@ class AEAssessmentGroup extends BaseGroup
      * @param array $aeAssessment
      * @return array
      */
-    public function putNewAEAssessment(string $employerId, string $employeeId, string $aeAssessmentId, array $aeAssessment): array
-    {
+    public function putNewAEAssessment(
+        string $employerId,
+        string $employeeId,
+        string $aeAssessmentId,
+        array $aeAssessment
+    ): array {
         $response = $this->guzzleClient->post(
             "/Employer/{$employerId}/Employee/{$employeeId}/AEAssessment/{$aeAssessmentId}",
             [

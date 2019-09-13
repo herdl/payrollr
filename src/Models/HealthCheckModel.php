@@ -22,6 +22,23 @@ class HealthCheckModel
     protected $info;
 
     /**
+     * HealthCheckModel constructor.
+     *
+     * @param string|null $version
+     * @param string|null $info
+     */
+    public function __construct(?string $version = null, ?string $info = null)
+    {
+        if ($version) {
+            $this->version = $version;
+        }
+
+        if ($info) {
+            $this->info = $info;
+        }
+    }
+
+    /**
      * @param string $version
      * @return HealthCheckModel
      */

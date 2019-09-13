@@ -250,8 +250,11 @@ class EmployeeGroup extends BaseGroup
      * @param string $effectiveDate
      * @return array
      */
-    public function getEmployeesFromPayScheduleOnEffectiveDate(string $employerId, string $payScheduleId, string $effectiveDate): array
-    {
+    public function getEmployeesFromPayScheduleOnEffectiveDate(
+        string $employerId,
+        string $payScheduleId,
+        string $effectiveDate
+    ): array {
         $response = $this->guzzleClient->get(
             "/Employer/{$employerId}/PaySchedule/{$payScheduleId}/Employees/{$effectiveDate}"
         );
@@ -269,8 +272,11 @@ class EmployeeGroup extends BaseGroup
      * @param string $payRunId
      * @return array
      */
-    public function getCommentaryFromPayRunByEmployee(string $employerId, string $payScheduleId, string $payRunId): array
-    {
+    public function getCommentaryFromPayRunByEmployee(
+        string $employerId,
+        string $payScheduleId,
+        string $payRunId
+    ): array {
         $response = $this->guzzleClient->get(
             "/Employer/{$employerId}/PaySchedule/{$payScheduleId}/PayRun/{$payRunId}/Employees/Commentary"
         );
@@ -409,8 +415,11 @@ class EmployeeGroup extends BaseGroup
      * @param string $revisionNumber
      * @return array
      */
-    public function deleteEmployeeRevisionByNumber(string $employerId, string $employeeId, string $revisionNumber): array
-    {
+    public function deleteEmployeeRevisionByNumber(
+        string $employerId,
+        string $employeeId,
+        string $revisionNumber
+    ): array {
         $response = $this->guzzleClient->delete(
             "/Employer/{$employerId}/Employee/{$employeeId}/Revision/{$revisionNumber}"
         );

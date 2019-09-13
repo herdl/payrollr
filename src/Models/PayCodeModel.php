@@ -116,6 +116,97 @@ class PayCodeModel
     protected $nominalCode;
 
     /**
+     * PayCodeModel constructor.
+     *
+     * @param string|null $code
+     * @param int|null $effectiveDate
+     * @param int|null $revision
+     * @param string|null $description
+     * @param bool|null $niable
+     * @param bool|null $taxable
+     * @param bool|null $benefit
+     * @param bool|null $notional
+     * @param bool|null $nonArrestable
+     * @param bool|null $readOnly
+     * @param string|null $territory
+     * @param string|null $region
+     * @param string|null $type
+     * @param LinkModel|null $nominalCode
+     */
+    public function __construct(
+        ?string $code = null,
+        ?int $effectiveDate = null,
+        ?int $revision = null,
+        ?string $description = null,
+        ?bool $niable = null,
+        ?bool $taxable = null,
+        ?bool $benefit = null,
+        ?bool $notional = null,
+        ?bool $nonArrestable = null,
+        ?bool $readOnly = null,
+        ?string $territory = null,
+        ?string $region = null,
+        ?string $type = null,
+        ?LinkModel $nominalCode = null
+    ) {
+        if ($code) {
+            $this->code = $code;
+        }
+
+        if ($effectiveDate) {
+            $this->effectiveDate = $effectiveDate;
+        }
+
+        if ($revision) {
+            $this->revision = $revision;
+        }
+
+        if ($description) {
+            $this->description = $description;
+        }
+
+        if ($niable) {
+            $this->niable = $niable;
+        }
+
+        if ($taxable) {
+            $this->taxable = $taxable;
+        }
+
+        if ($benefit) {
+            $this->benefit = $benefit;
+        }
+
+        if ($notional) {
+            $this->notional = $notional;
+        }
+
+        if ($nonArrestable) {
+            $this->nonArrestable = $nonArrestable;
+        }
+
+        if ($readOnly) {
+            $this->readOnly = $readOnly;
+        }
+
+        if ($territory) {
+            $this->territory = $territory;
+        }
+
+        if ($region) {
+            $this->region = $region;
+        }
+
+        if ($type) {
+            $this->type = $type;
+        }
+
+        if ($nominalCode) {
+            $this->nominalCode = $nominalCode;
+        }
+    }
+
+    /**
      * @param string $code
      * @return PayCodeModel
      */

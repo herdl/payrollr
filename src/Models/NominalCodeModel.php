@@ -22,6 +22,23 @@ class NominalCodeModel
     protected $description;
 
     /**
+     * NominalCodeModel constructor.
+     *
+     * @param string|null $key
+     * @param string|null $description
+     */
+    public function __construct(?string $key = null, ?string $description = null)
+    {
+        if ($key) {
+            $this->key = $key;
+        }
+
+        if ($description) {
+            $this->description = $description;
+        }
+    }
+
+    /**
      * @param string $key
      * @return NominalCodeModel
      */

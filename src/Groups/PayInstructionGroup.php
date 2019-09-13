@@ -14,8 +14,11 @@ class PayInstructionGroup extends BaseGroup
      * @param string $payInstructionId
      * @return array
      */
-    public function getPayInstructionFromEmployee(string $employerId, string $employeeId, string $payInstructionId): array
-    {
+    public function getPayInstructionFromEmployee(
+        string $employerId,
+        string $employeeId,
+        string $payInstructionId
+    ): array {
         $response = $this->guzzleClient->get(
             "/Employer/{$employerId}/Employee/{$employeeId}/PayInstruction/{$payInstructionId}"
         );
@@ -109,8 +112,12 @@ class PayInstructionGroup extends BaseGroup
      * @param array $payInstruction
      * @return array
      */
-    public function patchPayInstruction(string $employerId, string $employeeId, string $payInstructionId, array $payInstruction): array
-    {
+    public function patchPayInstruction(
+        string $employerId,
+        string $employeeId,
+        string $payInstructionId,
+        array $payInstruction
+    ): array {
         $response = $this->guzzleClient->patch(
             "/Employer/{$employerId}/Employee/{$employeeId}/PayInstructions/{$payInstructionId}",
             [
@@ -134,8 +141,12 @@ class PayInstructionGroup extends BaseGroup
      * @param array $payInstruction
      * @return array
      */
-    public function postPayInstruction(string $employerId, string $employeeId, string $payInstructionId, array $payInstruction): array
-    {
+    public function postPayInstruction(
+        string $employerId,
+        string $employeeId,
+        string $payInstructionId,
+        array $payInstruction
+    ): array {
         $response = $this->guzzleClient->post(
             "/Employer/{$employerId}/Employee/{$employeeId}/PayInstructions/{$payInstructionId}",
             [
@@ -159,8 +170,12 @@ class PayInstructionGroup extends BaseGroup
      * @param array $payInstruction
      * @return array
      */
-    public function putPayInstruction(string $employerId, string $employeeId, string $payInstructionId, array $payInstruction): array
-    {
+    public function putPayInstruction(
+        string $employerId,
+        string $employeeId,
+        string $payInstructionId,
+        array $payInstruction
+    ): array {
         $response = $this->guzzleClient->put(
             "/Employer/{$employerId}/Employee/{$employeeId}/PayInstructions/{$payInstructionId}",
             [
@@ -184,8 +199,12 @@ class PayInstructionGroup extends BaseGroup
      * @param array $payInstruction
      * @return array
      */
-    public function deletePayInstruction(string $employerId, string $employeeId, string $payInstructionId, array $payInstruction): array
-    {
+    public function deletePayInstruction(
+        string $employerId,
+        string $employeeId,
+        string $payInstructionId,
+        array $payInstruction
+    ): array {
         $response = $this->guzzleClient->delete(
             "/Employer/{$employerId}/Employee/{$employeeId}/PayInstructions/{$payInstructionId}",
             [

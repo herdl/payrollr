@@ -96,10 +96,89 @@ class HolidaySchemeModel
      */
     protected $accrualPayCodes;
 
-
+    /**
+     * HolidaySchemeModel constructor.
+     *
+     * @param int|null $effectiveDate
+     * @param int|null $revision
+     * @param string|null $code
+     * @param string|null $schemeKey
+     * @param string|null $schemeName
+     * @param int|null $schemeCeasedDate
+     * @param int|null $yearStartMonth
+     * @param int|null $yearStartDay
+     * @param float|null $annualEntitlementWeeks
+     * @param float|null $maxCarryOverDays
+     * @param bool|null $allowNegativeBalance
+     * @param bool|null $bankHolidayInclusive
+     * @param array|null $accrualPayCodes
+     */
     public function __construct(
-      ?string $test = null
+      ?int $effectiveDate = null,
+      ?int $revision = null,
+      ?string $code = null,
+      ?string $schemeKey = null,
+      ?string $schemeName = null,
+      ?int $schemeCeasedDate = null,
+      ?int $yearStartMonth = null,
+      ?int $yearStartDay = null,
+      ?float $annualEntitlementWeeks = null,
+      ?float $maxCarryOverDays = null,
+      ?bool $allowNegativeBalance = null,
+      ?bool $bankHolidayInclusive = null,
+      ?array $accrualPayCodes = null
     ) {
+        if ($effectiveDate) {
+            $this->effectiveDate = $effectiveDate;
+        }
+
+        if ($revision) {
+            $this->revision = $revision;
+        }
+
+        if ($code) {
+            $this->code = $code;
+        }
+
+        if ($schemeKey) {
+            $this->schemeKey = $schemeKey;
+        }
+
+        if ($schemeName) {
+            $this->schemeName = $schemeName;
+        }
+
+        if ($schemeCeasedDate) {
+            $this->schemeCeasedDate = $schemeCeasedDate;
+        }
+
+        if ($yearStartMonth) {
+            $this->yearStartMonth = $yearStartMonth;
+        }
+
+        if ($yearStartDay) {
+            $this->yearStartDay = $yearStartDay;
+        }
+
+        if ($annualEntitlementWeeks) {
+            $this->annualEntitlementWeeks = $annualEntitlementWeeks;
+        }
+
+        if ($maxCarryOverDays) {
+            $this->maxCarryOverDays = $maxCarryOverDays;
+        }
+
+        if ($allowNegativeBalance) {
+            $this->allowNegativeBalance = $allowNegativeBalance;
+        }
+
+        if ($bankHolidayInclusive) {
+            $this->bankHolidayInclusive = $bankHolidayInclusive;
+        }
+
+        if ($accrualPayCodes) {
+            $this->accrualPayCodes = $accrualPayCodes;
+        }
     }
 
     /**
