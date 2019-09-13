@@ -1538,7 +1538,7 @@ class TaggingGroup extends BaseGroup
     /**
      * https://developer.payrun.io/explore/#!/Tagging/DeletePayInstructionTag
      *
-     * Inserts a new tag on the pay instruction
+     * Deletes a tag from the pay line
      *
      * @param string $employerId
      * @param string $employeeId
@@ -1558,7 +1558,7 @@ class TaggingGroup extends BaseGroup
     /**
      * https://developer.payrun.io/explore/#!/Tagging/DeleteEmployeeTag
      *
-     * Inserts a new tag on the pay instruction
+     * Deletes a tag from the employee
      *
      * @param string $employerId
      * @param string $employeeId
@@ -1577,7 +1577,7 @@ class TaggingGroup extends BaseGroup
     /**
      * https://developer.payrun.io/explore/#!/Tagging/DeleteHolidaySchemeTag
      *
-     * Inserts a new tag on the pay instruction
+     * Deletes a tag from the holiday scheme
      *
      * @param string $employerId
      * @param string $holidaySchemeId
@@ -1596,7 +1596,7 @@ class TaggingGroup extends BaseGroup
     /**
      * https://developer.payrun.io/explore/#!/Tagging/DeletePayCodeTag
      *
-     * Inserts a new tag on the pay instruction
+     * Deletes a tag from the pay code
      *
      * @param string $employerId
      * @param string $payCodeId
@@ -1615,7 +1615,7 @@ class TaggingGroup extends BaseGroup
     /**
      * https://developer.payrun.io/explore/#!/Tagging/DeletePayRunTag
      *
-     * Inserts a new tag on the pay instruction
+     * Deletes a tag from the pay run
      *
      * @param string $employerId
      * @param string $payScheduleId
@@ -1635,7 +1635,7 @@ class TaggingGroup extends BaseGroup
     /**
      * https://developer.payrun.io/explore/#!/Tagging/DeletePayScheduleTag
      *
-     * Inserts a new tag on the pay instruction
+     * Deletes a tag from the pay schedule
      *
      * @param string $employerId
      * @param string $payScheduleId
@@ -1655,7 +1655,7 @@ class TaggingGroup extends BaseGroup
     /**
      * https://developer.payrun.io/explore/#!/Tagging/DeleteRtiTransactionTag
      *
-     * Inserts a new tag on the pay instruction
+     * Deletes a tag from the RTI transaction
      *
      * @param string $employerId
      * @param string $rtiTransactionId
@@ -1674,7 +1674,7 @@ class TaggingGroup extends BaseGroup
     /**
      * https://developer.payrun.io/explore/#!/Tagging/DeleteCisInstructionTag
      *
-     * Inserts a new tag on the pay instruction
+     * Deletes a tag from the CIS instruction
      *
      * @param string $employerId
      * @param string $subContractorId
@@ -1694,7 +1694,7 @@ class TaggingGroup extends BaseGroup
     /**
      * https://developer.payrun.io/explore/#!/Tagging/DeleteCisLineTag
      *
-     * Inserts a new tag on the pay instruction
+     * Deletes a tag from the CIS line
      *
      * @param string $employerId
      * @param string $subContractorId
@@ -1714,7 +1714,7 @@ class TaggingGroup extends BaseGroup
     /**
      * https://developer.payrun.io/explore/#!/Tagging/DeleteSubContractorTag
      *
-     * Inserts a new tag on the pay instruction
+     * Deletes a tag from the sub contractor
      *
      * @param string $employerId
      * @param string $subContractorId
@@ -1733,7 +1733,7 @@ class TaggingGroup extends BaseGroup
     /**
      * https://developer.payrun.io/explore/#!/Tagging/DeleteEmployerTag
      *
-     * Inserts a new tag on the pay instruction
+     * Deletes a tag from the employer
      *
      * @param string $employerId
      * @param string $tagId
