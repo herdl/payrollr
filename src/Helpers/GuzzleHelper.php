@@ -26,6 +26,7 @@ class GuzzleHelper
         $middleware = new Oauth1([
             'consumer_key' => $consumerKey,
             'consumer_secret' => $consumerSecret,
+            'token_secret' => '', // To stop Oauth1 crying >.<
         ]);
         $stack->push($middleware);
 
