@@ -1,5 +1,5 @@
 {
-    "name": "herdl/php-payrunio",
+    "name": "herdl/payrun-php",
     "description": "A PHP client for the PayRun.io API",
     "type": "library",
     "authors": [
