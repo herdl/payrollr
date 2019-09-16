@@ -1,24 +1,24 @@
 {
-    "name": "herdl/payrun-php",
-    "description": "A PHP client for the PayRun.io API",
-    "version": "1.0.0",
-    "type": "library",
-    "authors": [
-        {
-            "name": "B3none",
-            "email": "alex@herdl.com"
-        }
-    ],
-    "autoload": {
-        "psr-4": {
-            "Herdl\\PayRun\\": "src/"
-        }
-    },
-    "require": {
-        "php": ">=7.2",
-        "squizlabs/php_codesniffer": "^3.4",
-        "guzzle/guzzle": "^3.9",
-        "guzzlehttp/oauth-subscriber": "^0.3.0",
-        "ext-json": "*"
+  "name": "herdl/payrun-php",
+  "description": "A PHP client for the PayRun.io API",
+  "version": "1.0.0",
+  "type": "library",
+  "authors": [
+    {
+      "name": "B3none",
+      "email": "alex@herdl.com"
     }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Herdl\\PayRun\\": "src/"
+    }
+  },
+  "require": {
+    "php": ">=7.2",
+    "squizlabs/php_codesniffer": "^3.4",
+    "guzzle/guzzle": "^3.9",
+    "guzzlehttp/oauth-subscriber": "^0.3.0",
+    "ext-json": "*"
+  }
 }
