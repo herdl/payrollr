@@ -69,14 +69,16 @@ class EmployeeModel
     protected $lastName;
 
     /**
-     * The employee's National Insurance number issued by HMRC. Temporary NI numbers should no longer be used for payroll
+     * The employee's National Insurance number issued by HMRC.
+     * Temporary NI numbers should no longer be used for payroll
      *
      * @var string
      */
     protected $niNumber;
 
     /**
-     * A timestamp for the employee's date of birth. The correct date of birth will ensure the correct NI letter is assigned.
+     * A timestamp for the employee's date of birth.
+     * The correct date of birth will ensure the correct NI letter is assigned.
      *
      * @var int
      */
@@ -97,11 +99,13 @@ class EmployeeModel
     protected $gender;
 
     /**
-     * The NIC liability flags are used to ensure the correct NI letter is assigned. See Using the correct NI letter code for more information on setting the correct NIC liability flags.
+     * The NIC liability flags are used to ensure the correct NI letter is assigned.
+     * See Using the correct NI letter code for more information on setting the correct NIC liability flags.
      *
      * https://developer.payrun.io/docs/payroll-help/using-the-correct-ni-letter.html
      *
-     * IsFullyLiable|HasOtherJob|IsFemaleEntitledToReducedRate|IsNotLiable|IsContractedOut|IsApprentice|LeaverBeyond6Weeks|PaymentAfterLeaving
+     * IsFullyLiable, HasOtherJob, IsFemaleEntitledToReducedRate, IsNotLiable, IsContractedOut,
+     * IsApprentice, LeaverBeyond6Weeks, PaymentAfterLeaving
      *
      * @var string
      */
@@ -115,7 +119,8 @@ class EmployeeModel
     protected $region;
 
     /**
-     * The employee's territory which determines the correct calculators to be used. Currently United Kingdom is the only supported territory.
+     * The employee's territory which determines the correct calculators to be used.
+     * Currently United Kingdom is the only supported territory.
      *
      * @var string
      */
@@ -136,7 +141,8 @@ class EmployeeModel
     protected $startDate;
 
     /**
-     * The declaration made by the employee. Required for FPS reporting to HMRC. Must be set if specifying the employee start date.
+     * The declaration made by the employee. Required for FPS reporting to HMRC.
+     * Must be set if specifying the employee start date.
      *
      * @var string
      */
@@ -277,7 +283,8 @@ class EmployeeModel
     protected $employeePartner;
 
     /**
-     * The auto enrolment assessment override value. Enables the auto enrolment assessment result to be overridden
+     * The auto enrolment assessment override value.
+     * Enables the auto enrolment assessment result to be overridden
      *
      * None, OptOut, OptIn, VoluntaryJoiner, ContractualPension, CeasedMembership, Leaver, Excluded
      *
@@ -286,14 +293,16 @@ class EmployeeModel
     protected $aeAssessmentOverride;
 
     /**
-     * A timestamp for the auto enrolment assessment override date. Determines the date when auto enrolment assessment override applies.
+     * A timestamp for the auto enrolment assessment override date.
+     * Determines the date when auto enrolment assessment override applies.
      *
      * @var int
      */
     protected $aeAssessmentOverrideDate;
 
     /**
-     * A timestamp for the auto enrolment deferment date. Indicates the date when auto enrolment assessments are deferred to.
+     * A timestamp for the auto enrolment deferment date.
+     * Indicates the date when auto enrolment assessments are deferred to.
      *
      * @var int
      */

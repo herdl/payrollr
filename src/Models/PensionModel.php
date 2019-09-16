@@ -97,8 +97,10 @@ class PensionModel
     protected $employerContributionPercent;
 
     /**
-     * The lower earning threshold; only pensionable pay above this value will be included for calculating contributions.
-     * Thresholds are predominantly used for triggering Auto Enrolment contributions; see Auto Enrolment for more information.
+     * The lower earning threshold; only pensionable pay above this
+     * value will be included for calculating contributions.
+     * Thresholds are predominantly used for triggering Auto Enrolment
+     * contributions; see Auto Enrolment for more information.
      *
      * https://developer.payrun.io/docs/payroll-help/auto-enrolment.html
      *
@@ -107,8 +109,10 @@ class PensionModel
     protected $lowerThreshold;
 
     /**
-     * The upper earning threshold; only pensionable pay below this value will be included for calculating contributions.
-     * Thresholds are predominantly used for triggering Auto Enrolment contributions; see Auto Enrolment for more information.
+     * The upper earning threshold; only pensionable pay below
+     * this value will be included for calculating contributions.
+     * Thresholds are predominantly used for triggering Auto Enrolment
+     * contributions; see Auto Enrolment for more information.
      *
      * https://developer.payrun.io/docs/payroll-help/auto-enrolment.html
      *
@@ -117,7 +121,8 @@ class PensionModel
     protected $upperThreshold;
 
     /**
-     * The taxation method to use when calculating pension contributions; this should be mandated by your pension provider.
+     * The taxation method to use when calculating pension contributions;
+     * this should be mandated by your pension provider.
      *
      * NotSet, NetBased, ReliefAtSource
      *
@@ -133,14 +138,16 @@ class PensionModel
     protected $contributionDeductionDay;
 
     /**
-     * The salary sacrifice option. Used to indicate if the pension scheme employee contributions should make use of salary sacrifice.
+     * The salary sacrifice option. Used to indicate if the pension scheme
+     * employee contributions should make use of salary sacrifice.
      *
      * @var bool
      */
     protected $salarySacrifice;
 
     /**
-     * The pro-rata method option to be used; the default is not set. See Pro-rata Calculation Methods for more information.
+     * The pro-rata method option to be used; the default is not set.
+     * See Pro-rata Calculation Methods for more information.
      *
      * https://developer.payrun.io/docs/payroll-help/prorata-calculation-methods.html
      *
@@ -151,7 +158,8 @@ class PensionModel
     protected $proRataMethod;
 
     /**
-     * The rounding option to use when calculating pension deductions from both employee and employer; default is Bankers.
+     * The rounding option to use when calculating pension deductions
+     * from both employee and employer; default is Bankers.
      *
      * NotSet, PennyUp, PennyDown, Bankers, FiveUp, FiveDown
      *
@@ -160,14 +168,16 @@ class PensionModel
     protected $roundingOption = 'Bankers';
 
     /**
-     * The Auto Enrolment compatibility indicator. Used to indicate if this pension scheme is compatible with auto enrolment requirements.
+     * The Auto Enrolment compatibility indicator. Used to indicate if this
+     * pension scheme is compatible with auto enrolment requirements.
      *
      * @var bool
      */
     protected $aeCompatible;
 
     /**
-     * The Use Auto Enrolment Thresholds indicator. Used to indicate if this pension scheme uses the auto enrolment thresholds.
+     * The Use Auto Enrolment Thresholds indicator. Used to indicate if this
+     * pension scheme uses the auto enrolment thresholds.
      *
      * @var bool
      */

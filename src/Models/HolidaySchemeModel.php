@@ -34,7 +34,8 @@ class HolidaySchemeModel
     protected $code;
 
     /**
-     * The unique identifier of the holiday scheme. This value remains consistent for the entire history of the holiday scheme.
+     * The unique identifier of the holiday scheme.
+     * This value remains consistent for the entire history of the holiday scheme.
      *
      * @var string
      */
@@ -76,7 +77,8 @@ class HolidaySchemeModel
     protected $annualEntitlementWeeks;
 
     /**
-     * Determines the maximum number of entitled holiday days that can be carried over into a new annual holiday entitlement year.
+     * Determines the maximum number of entitled holiday days that can be
+     * carried over into a new annual holiday entitlement year.
      *
      * @var float
      */

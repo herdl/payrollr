@@ -13,7 +13,8 @@ use Herdl\PayRun\Helpers\ExceptionHelper;
 class HMRCSettingsModel
 {
     /**
-     * The Tax Office Number is the first part of your employer's PAYE reference issued by HMRC; it consists of 3 numbers.
+     * The Tax Office Number is the first part of your employer's PAYE
+     * reference issued by HMRC; it consists of 3 numbers.
      * Required to make RTI submissions.
      *
      * @var int
@@ -21,7 +22,8 @@ class HMRCSettingsModel
     protected $taxOfficeNumber;
 
     /**
-     * The Tax Office Reference is the second part of your employer's PAYE reference issued by HMRC; it consists of up to 10 apha-numeric characters.
+     * The Tax Office Reference is the second part of your employer's PAYE reference
+     * issued by HMRC; it consists of up to 10 apha-numeric characters.
      * Required to make RTI submissions.
      *
      * @var string
@@ -29,7 +31,8 @@ class HMRCSettingsModel
     protected $taxOfficeReference;
 
     /**
-     * The Accounting Office Reference is issued by HMRC; typically it is found on employer's P30BC Employer Payment Booklet.
+     * The Accounting Office Reference is issued by HMRC;typically
+     * it is found on employer's P30BC Employer Payment Booklet.
      * Required to make RTI submissions.
      *
      * @var string
@@ -89,7 +92,7 @@ class HMRCSettingsModel
     protected $contactLastName;
 
     /**
-     * The designated HMRC contact person's email address; RTI submission acknowledgements will be sent to this address.
+     * The designated HMRC contact person's email address; RTI submission acknowledgements will be sent to this address
      *
      * @var string
      */

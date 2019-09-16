@@ -60,7 +60,8 @@ class EmployerModel
     protected $bacsServiceUserNumber;
 
     /**
-     * Indicates if the employer should claim the Employment Allowance See Claiming the Employment Allowance for more details.
+     * Indicates if the employer should claim the Employment Allowance
+     * See Claiming the Employment Allowance for more details.
      *
      * https://developer.payrun.io/docs/payroll-help/claiming-employment-allowance.html
      *
@@ -69,7 +70,8 @@ class EmployerModel
     protected $claimEmploymentAllowance;
 
     /**
-     * Indicates if the employer should claim the Small Employer Relief See Claiming Small Employer Relief for more details.
+     * Indicates if the employer should claim the Small Employer
+     * Relief See Claiming Small Employer Relief for more details.
      *
      * https://developer.payrun.io/docs/payroll-help/claiming-small-employer-relief.html
      *
@@ -78,7 +80,8 @@ class EmployerModel
     protected $claimSmallEmployerRelief;
 
     /**
-     * The employer's annual levy allowance; The apprenticeship levy will only apply to employers with annual paybill in excess of £3 million.
+     * The employer's annual levy allowance; The apprenticeship levy will only
+     * apply to employers with annual paybill in excess of £3 million.
      *
      * Between 0, 15000
      *
@@ -87,7 +90,8 @@ class EmployerModel
     protected $apprenticeshipLevyAllowance;
 
     /**
-     * The list of pre-claculation rules to exclude by default for all employees. See Pre-calculation rules for more information on how they work.
+     * The list of pre-claculation rules to exclude by default for all employees.
+     * See Pre-calculation rules for more information on how they work.
      *
      * https://developer.payrun.io/docs/key-concepts/pre-calculation-rules.html
      *

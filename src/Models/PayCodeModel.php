@@ -13,7 +13,8 @@ use Herdl\PayRun\Helpers\ExceptionHelper;
 class PayCodeModel
 {
     /**
-     * The pay code identifier referenced on calculation pay lines. See revisible objects for more information on revisions and how they work.
+     * The pay code identifier referenced on calculation pay lines.
+     * See revisible objects for more information on revisions and how they work.
      *
      * https://developer.payrun.io/docs/key-concepts/revisible-objects.html
      *
@@ -112,7 +113,8 @@ class PayCodeModel
     protected $type;
 
     /**
-     * A link to the associated nominal ledger code. Nominal codes are used to group pay codes into journal accounts. See Nominal Code for more details.
+     * A link to the associated nominal ledger code. Nominal codes are used to group pay codes into journal accounts.
+     * See Nominal Code for more details.
      *
      * https://developer.payrun.io/docs/reference/nominal-code/index.html
      *
