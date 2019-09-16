@@ -2,6 +2,11 @@
 
 namespace Herdl\PayRun\Models;
 
+use Error;
+use Exception;
+use Herdl\PayRun\Exceptions\ModelException;
+use Herdl\PayRun\Helpers\ExceptionHelper;
+
 /**
  * https://developer.payrun.io/docs/reference/employee/index.html#employee
  */
@@ -1336,52 +1341,61 @@ class EmployeeModel
 
     /**
      * @return array
+     * @throws ModelException
      */
     public function format(): array
     {
-        return [
-            'EffectiveDate' => Date::formatDate($this->effectiveDate),
-            'Revision' => $this->revision,
-            'Code' => $this->code,
-            'Title' => $this->title,
-            'FirstName' => $this->firstName,
-            'MiddleName' => $this->middleName,
-            'Initials' => $this->initials,
-            'LastName' => $this->lastName,
-            'NiNumber' => $this->niNumber,
-            'DateOfBirth' => Date::formatDate($this->dateOfBirth),
-            'DirectorshipAppointmentDate' => Date::formatDate($this->directorshipAppointmentDate),
-            'Gender' => $this->gender,
-            'NicLiability' => $this->nicLiability,
-            'Region' => $this->region,
-            'Territory' => $this->territory,
-            'PaySchedule' => $this->paySchedule->format(),
-            'StartDate' => Date::formatDate($this->startDate),
-            'StarterDeclaration' => $this->starterDeclaration,
-            'LeavingDate' => Date::formatDate($this->leavingDate),
-            'LeaverReason' => $this->leaverReason,
-            'RuleExclusions' => $this->ruleExclusions,
-            'WorkingWeek' => $this->workingWeek,
-            'Address' => $this->address->format(),
-            'HoursPerWeek' => $this->hoursPerWeek,
-            'PassportNumber' => $this->passportNumber,
-            'Seconded' => $this->seconded,
-            'EEACitizen' => $this->eeaCitizen ? 'true' : 'false',
-            'EPM6' => $this->epm6 ? 'true' : 'false',
-            'PaymentToANonIndividual' => $this->paymentToANonIndividual ? 'true' : 'false',
-            'IrregularEmployment' => $this->irregularEmployment ? 'true' : 'false',
-            'OnStrike' => $this->onStrike ? 'true' : 'false',
-            'PaymentMethod' => $this->paymentMethod,
-            'MaritalStatus' => $this->maritalStatus,
-            'BankAccount' => $this->bankAccount->format(),
-            'EmployeePartner' => $this->employeePartner->format(),
-            'IsAgencyWorker' => $this->isAgencyWorker ? 'true' : 'false',
-            'Deactivated' => $this->deactivated ? 'true' : 'false',
-            'AEAssessmentOverride' => $this->aeAssessmentOverride,
-            'AEAssessmentOverrideDate' => Date::formatDate($this->aeAssessmentOverrideDate),
-            'AEPostponementDate' => Date::formatDate($this->aePostponementDate),
-            'AEExclusionReasonCode' => $this->aeExclusionReasonCode,
-            'MetaData' => $this->metaData->format(),
-        ];
+        try {
+            return [
+                'EffectiveDate' => Date::formatDate($this->effectiveDate),
+                'Revision' => $this->revision,
+                'Code' => $this->code,
+                'Title' => $this->title,
+                'FirstName' => $this->firstName,
+                'MiddleName' => $this->middleName,
+                'Initials' => $this->initials,
+                'LastName' => $this->lastName,
+                'NiNumber' => $this->niNumber,
+                'DateOfBirth' => Date::formatDate($this->dateOfBirth),
+                'DirectorshipAppointmentDate' => Date::formatDate($this->directorshipAppointmentDate),
+                'Gender' => $this->gender,
+                'NicLiability' => $this->nicLiability,
+                'Region' => $this->region,
+                'Territory' => $this->territory,
+                'PaySchedule' => $this->paySchedule->format(),
+                'StartDate' => Date::formatDate($this->startDate),
+                'StarterDeclaration' => $this->starterDeclaration,
+                'LeavingDate' => Date::formatDate($this->leavingDate),
+                'LeaverReason' => $this->leaverReason,
+                'RuleExclusions' => $this->ruleExclusions,
+                'WorkingWeek' => $this->workingWeek,
+                'Address' => $this->address->format(),
+                'HoursPerWeek' => $this->hoursPerWeek,
+                'PassportNumber' => $this->passportNumber,
+                'Seconded' => $this->seconded,
+                'EEACitizen' => $this->eeaCitizen ? 'true' : 'false',
+                'EPM6' => $this->epm6 ? 'true' : 'false',
+                'PaymentToANonIndividual' => $this->paymentToANonIndividual ? 'true' : 'false',
+                'IrregularEmployment' => $this->irregularEmployment ? 'true' : 'false',
+                'OnStrike' => $this->onStrike ? 'true' : 'false',
+                'PaymentMethod' => $this->paymentMethod,
+                'MaritalStatus' => $this->maritalStatus,
+                'BankAccount' => $this->bankAccount->format(),
+                'EmployeePartner' => $this->employeePartner->format(),
+                'IsAgencyWorker' => $this->isAgencyWorker ? 'true' : 'false',
+                'Deactivated' => $this->deactivated ? 'true' : 'false',
+                'AEAssessmentOverride' => $this->aeAssessmentOverride,
+                'AEAssessmentOverrideDate' => Date::formatDate($this->aeAssessmentOverrideDate),
+                'AEPostponementDate' => Date::formatDate($this->aePostponementDate),
+                'AEExclusionReasonCode' => $this->aeExclusionReasonCode,
+                'MetaData' => $this->metaData->format(),
+            ];
+        } catch (ModelException $modelException) {
+            throw $modelException;
+        } catch (Exception $exception) {
+            ExceptionHelper::handle($this);
+        } catch (Error $error) {
+            ExceptionHelper::handle($this);
+        }
     }
 }

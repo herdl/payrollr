@@ -2,6 +2,11 @@
 
 namespace Herdl\PayRun\Models;
 
+use Error;
+use Exception;
+use Herdl\PayRun\Exceptions\ModelException;
+use Herdl\PayRun\Helpers\ExceptionHelper;
+
 /**
  * https://developer.payrun.io/docs/reference/meta-data.html#meta-data
  */
@@ -39,16 +44,28 @@ class MetaDataModel
         return $this->item;
     }
 
+    /**
+     * @return array
+     * @throws ModelException
+     */
     public function format(): array
     {
-        $items = [];
+        try {
+            $items = [];
 
-        foreach ($this->item as $item) {
-            $items[] = $item->format();
+            foreach ($this->item as $item) {
+                $items[] = $item->format();
+            }
+
+            return [
+                'Item' => $items,
+            ];
+        } catch (ModelException $modelException) {
+            throw $modelException;
+        } catch (Exception $exception) {
+            ExceptionHelper::handle($this);
+        } catch (Error $error) {
+            ExceptionHelper::handle($this);
         }
-
-        return [
-            'Item' => $items,
-        ];
     }
 }

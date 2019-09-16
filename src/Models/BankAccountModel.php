@@ -2,6 +2,11 @@
 
 namespace Herdl\PayRun\Models;
 
+use Error;
+use Exception;
+use Herdl\PayRun\Exceptions\ModelException;
+use Herdl\PayRun\Helpers\ExceptionHelper;
+
 /**
  * https://developer.payrun.io/docs/reference/bank-account.html#bank-account
  */
@@ -140,14 +145,23 @@ class BankAccountModel
 
     /**
      * @return array
+     * @throws ModelException
      */
     public function format(): array
     {
-        return [
-            'AccountName' => $this->accountName,
-            'AccountNumber' => (string)$this->accountName,
-            'SortCode' => (string)$this->accountName,
-            'Reference' => $this->accountName,
-        ];
+        try {
+            return [
+                'AccountName' => $this->accountName,
+                'AccountNumber' => (string)$this->accountName,
+                'SortCode' => (string)$this->accountName,
+                'Reference' => $this->accountName,
+            ];
+        } catch (ModelException $modelException) {
+            throw $modelException;
+        } catch (Exception $exception) {
+            ExceptionHelper::handle($this);
+        } catch (Error $error) {
+            ExceptionHelper::handle($this);
+        }
     }
 }

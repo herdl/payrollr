@@ -2,6 +2,11 @@
 
 namespace Herdl\PayRun\Models;
 
+use Error;
+use Exception;
+use Herdl\PayRun\Exceptions\ModelException;
+use Herdl\PayRun\Helpers\ExceptionHelper;
+
 /**
  * https://developer.payrun.io/docs/reference/address.html#address
  */
@@ -202,16 +207,25 @@ class AddressModel
 
     /**
      * @return array
+     * @throws ModelException
      */
     public function format(): array
     {
-        return [
-            'Address1' => $this->address1,
-            'Address2' => $this->address2,
-            'Address3' => $this->address3,
-            'Address4' => $this->address4,
-            'Postcode' => $this->postCode,
-            'Country' => $this->country,
-        ];
+        try {
+            return [
+                'Address1' => $this->address1,
+                'Address2' => $this->address2,
+                'Address3' => $this->address3,
+                'Address4' => $this->address4,
+                'Postcode' => $this->postCode,
+                'Country' => $this->country,
+            ];
+        } catch (ModelException $modelException) {
+            throw $modelException;
+        } catch (Exception $exception) {
+            ExceptionHelper::handle($this);
+        } catch (Error $error) {
+            ExceptionHelper::handle($this);
+        }
     }
 }

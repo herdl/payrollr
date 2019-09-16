@@ -2,6 +2,11 @@
 
 namespace Herdl\PayRun\Models;
 
+use Error;
+use Exception;
+use Herdl\PayRun\Exceptions\ModelException;
+use Herdl\PayRun\Helpers\ExceptionHelper;
+
 /**
  * https://developer.payrun.io/docs/reference/employer/index.html#employer-auto-enrolment
  */
@@ -471,25 +476,34 @@ class EmployerAutoEnrolmentModel
 
     /**
      * @return array
+     * @throws ModelException
      */
     public function format(): array
     {
-        return [
-            'StagingDate' => Date::formatDate($this->stagingDate),
-            'PostponementDate' => Date::formatDate($this->postponementDate),
-            'ReEnrolmentDayOffset' => $this->reEnrolmentDayOffset,
-            'ReEnrolmentMonthOffset' => $this->reEnrolmentMonthOffset,
-            'PrimaryFirstName' => $this->primaryFirstName,
-            'PrimaryLastName' => $this->primaryLastName,
-            'PrimaryEmail' => $this->primaryEmail,
-            'PrimaryTelephone' => $this->primaryTelephone,
-            'PrimaryJobTitle' => $this->primaryJobTitle,
-            'SecondaryFirstName' => $this->secondaryFirstName,
-            'SecondaryLastName' => $this->secondaryLastName,
-            'SecondaryEmail' => $this->secondaryEmail,
-            'SecondaryTelephone' => $this->secondaryTelephone,
-            'SecondaryJobTitle' => $this->secondaryJobTitle,
-            'Pension' => $this->pension->format(),
-        ];
+        try {
+            return [
+                'StagingDate' => Date::formatDate($this->stagingDate),
+                'PostponementDate' => Date::formatDate($this->postponementDate),
+                'ReEnrolmentDayOffset' => $this->reEnrolmentDayOffset,
+                'ReEnrolmentMonthOffset' => $this->reEnrolmentMonthOffset,
+                'PrimaryFirstName' => $this->primaryFirstName,
+                'PrimaryLastName' => $this->primaryLastName,
+                'PrimaryEmail' => $this->primaryEmail,
+                'PrimaryTelephone' => $this->primaryTelephone,
+                'PrimaryJobTitle' => $this->primaryJobTitle,
+                'SecondaryFirstName' => $this->secondaryFirstName,
+                'SecondaryLastName' => $this->secondaryLastName,
+                'SecondaryEmail' => $this->secondaryEmail,
+                'SecondaryTelephone' => $this->secondaryTelephone,
+                'SecondaryJobTitle' => $this->secondaryJobTitle,
+                'Pension' => $this->pension->format(),
+            ];
+        } catch (ModelException $modelException) {
+            throw $modelException;
+        } catch (Exception $exception) {
+            ExceptionHelper::handle($this);
+        } catch (Error $error) {
+            ExceptionHelper::handle($this);
+        }
     }
 }

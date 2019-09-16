@@ -2,6 +2,11 @@
 
 namespace Herdl\PayRun\Models;
 
+use Error;
+use Exception;
+use Herdl\PayRun\Exceptions\ModelException;
+use Herdl\PayRun\Helpers\ExceptionHelper;
+
 /**
  * https://developer.payrun.io/docs/reference/employer/index.html#hmrc-settings
  */
@@ -408,23 +413,32 @@ class HMRCSettingsModel
 
     /**
      * @return array
+     * @throws ModelException
      */
     public function format(): array
     {
-        return [
-            'TaxOfficeNumber' => $this->taxOfficeNumber,
-            'TaxOfficeReference' => $this->taxOfficeReference,
-            'AccountingOfficeRef' => $this->accountingOfficeRef,
-            'SAUTR' => $this->sautr,
-            'COTAXRef' => $this->cotaxRef,
-            'Sender' => $this->sender,
-            'SenderId' => $this->senderId,
-            'Password' => $this->password,
-            'ContactFirstName' => $this->contactFirstName,
-            'ContactLastName' => $this->contactLastName,
-            'ContactEmail' => $this->contactEmail,
-            'ContactTelephone' => $this->contactTelephone,
-            'ContactFax' => $this->contactFax,
-        ];
+        try {
+            return [
+                'TaxOfficeNumber' => $this->taxOfficeNumber,
+                'TaxOfficeReference' => $this->taxOfficeReference,
+                'AccountingOfficeRef' => $this->accountingOfficeRef,
+                'SAUTR' => $this->sautr,
+                'COTAXRef' => $this->cotaxRef,
+                'Sender' => $this->sender,
+                'SenderId' => $this->senderId,
+                'Password' => $this->password,
+                'ContactFirstName' => $this->contactFirstName,
+                'ContactLastName' => $this->contactLastName,
+                'ContactEmail' => $this->contactEmail,
+                'ContactTelephone' => $this->contactTelephone,
+                'ContactFax' => $this->contactFax,
+            ];
+        } catch (ModelException $modelException) {
+            throw $modelException;
+        } catch (Exception $exception) {
+            ExceptionHelper::handle($this);
+        } catch (Error $error) {
+            ExceptionHelper::handle($this);
+        }
     }
 }

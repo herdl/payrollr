@@ -2,6 +2,11 @@
 
 namespace Herdl\PayRun\Models;
 
+use Error;
+use Exception;
+use Herdl\PayRun\Exceptions\ModelException;
+use Herdl\PayRun\Helpers\ExceptionHelper;
+
 /**
  * https://developer.payrun.io/docs/reference/pay-code/index.html#pay-codes
  */
@@ -456,5 +461,37 @@ class PayCodeModel
     public function getNominalCode(): LinkModel
     {
         return $this->nominalCode;
+    }
+
+    /**
+     * @return array
+     * @throws ModelException
+     */
+    public function format(): array
+    {
+        try {
+            return [
+                'EffectiveDate' => Date::formatDate($this->effectiveDate),
+                'Revision' => $this->revision,
+                'Code' => $this->code,
+                'Description' => $this->description,
+                'Niable' => $this->niable ? 'true' : 'false',
+                'Taxable' => $this->taxable ? 'true' : 'false',
+                'Territory' => $this->territory,
+                'Region' => $this->region,
+                'Type' => $this->type,
+                'Benefit' => $this->benefit ? 'true' : 'false',
+                'Notional' => $this->notional ? 'true' : 'false',
+                'NonArrestable' => $this->nonArrestable ? 'true' : 'false',
+                'Readonly' => $this->readOnly ? 'true' : 'false',
+                'NominalCode' => $this->nominalCode->format(),
+            ];
+        } catch (ModelException $modelException) {
+            throw $modelException;
+        } catch (Exception $exception) {
+            ExceptionHelper::handle($this);
+        } catch (Error $error) {
+            ExceptionHelper::handle($this);
+        }
     }
 }

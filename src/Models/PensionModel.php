@@ -2,6 +2,11 @@
 
 namespace Herdl\PayRun\Models;
 
+use Error;
+use Exception;
+use Herdl\PayRun\Exceptions\ModelException;
+use Herdl\PayRun\Helpers\ExceptionHelper;
+
 /**
  * https://developer.payrun.io/docs/reference/pension/index.html#pension
  */
@@ -774,38 +779,47 @@ class PensionModel
 
     /**
      * @return array
+     * @throws ModelException
      */
     public function format(): array
     {
-        return [
-            'EffectiveDate' => Date::formatDate($this->effectiveDate),
-            'Revision' => $this->revision,
-            'SchemeName' => $this->schemeName,
-            'ProviderName' => $this->providerName,
-            'ProviderEmployerRef' => $this->providerEmployerRef,
-            'Group' => $this->group,
-            'SubGroup' => $this->subGroup,
-            'EmployeeContributionCash' => $this->employeeContributionCash,
-            'EmployerContributionCash' => $this->employerContributionCash,
-            'EmployeeContributionPercent' => $this->employeeContributionPercent,
-            'EmployerContributionPercent' => $this->employerContributionPercent,
-            'LowerThreshold' => $this->lowerThreshold,
-            'UpperThreshold' => $this->upperThreshold,
-            'TaxationMethod' => $this->taxationMethod,
-            'Code' => $this->code,
-            'ContributionDeductionDay' => $this->contributionDeductionDay,
-            'SalarySacrifice' => $this->salarySacrifice ? 'true' : 'false',
-            'ProRataMethod' => $this->proRataMethod,
-            'RoundingOption' => $this->roundingOption,
-            'AECompatible' => $this->aeCompatible ? 'true' : 'false',
-            'UseAEThresholds' => $this->useAEThresholds ? 'true' : 'false',
-            'PensionablePayCodes' => [
-                'PayCode' => $this->pensionablePayCodes,
-            ],
-            'QualifyingPayCodes' => [
-                'PayCode' => $this->qualifyingPayCodes,
-            ],
-            'MetaData' => $this->metaData->format(),
-        ];
+        try {
+            return [
+                'EffectiveDate' => Date::formatDate($this->effectiveDate),
+                'Revision' => $this->revision,
+                'SchemeName' => $this->schemeName,
+                'ProviderName' => $this->providerName,
+                'ProviderEmployerRef' => $this->providerEmployerRef,
+                'Group' => $this->group,
+                'SubGroup' => $this->subGroup,
+                'EmployeeContributionCash' => $this->employeeContributionCash,
+                'EmployerContributionCash' => $this->employerContributionCash,
+                'EmployeeContributionPercent' => $this->employeeContributionPercent,
+                'EmployerContributionPercent' => $this->employerContributionPercent,
+                'LowerThreshold' => $this->lowerThreshold,
+                'UpperThreshold' => $this->upperThreshold,
+                'TaxationMethod' => $this->taxationMethod,
+                'Code' => $this->code,
+                'ContributionDeductionDay' => $this->contributionDeductionDay,
+                'SalarySacrifice' => $this->salarySacrifice ? 'true' : 'false',
+                'ProRataMethod' => $this->proRataMethod,
+                'RoundingOption' => $this->roundingOption,
+                'AECompatible' => $this->aeCompatible ? 'true' : 'false',
+                'UseAEThresholds' => $this->useAEThresholds ? 'true' : 'false',
+                'PensionablePayCodes' => [
+                    'PayCode' => $this->pensionablePayCodes,
+                ],
+                'QualifyingPayCodes' => [
+                    'PayCode' => $this->qualifyingPayCodes,
+                ],
+                'MetaData' => $this->metaData->format(),
+            ];
+        } catch (ModelException $modelException) {
+            throw $modelException;
+        } catch (Exception $exception) {
+            ExceptionHelper::handle($this);
+        } catch (Error $error) {
+            ExceptionHelper::handle($this);
+        }
     }
 }

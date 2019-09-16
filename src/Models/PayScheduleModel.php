@@ -2,6 +2,11 @@
 
 namespace Herdl\PayRun\Models;
 
+use Error;
+use Exception;
+use Herdl\PayRun\Exceptions\ModelException;
+use Herdl\PayRun\Helpers\ExceptionHelper;
+
 /**
  * https://developer.payrun.io/docs/reference/pay-schedule/index.html#pay-schedule
  */
@@ -108,13 +113,22 @@ class PayScheduleModel
 
     /**
      * @return array
+     * @throws ModelException
      */
     public function format(): array
     {
-        return [
-            'Name' => $this->name,
-            'PayFrequency' => $this->payFrequency,
-            'MetaData' => $this->metaData->format(),
-        ];
+        try {
+            return [
+                'Name' => $this->name,
+                'PayFrequency' => $this->payFrequency,
+                'MetaData' => $this->metaData->format(),
+            ];
+        } catch (ModelException $modelException) {
+            throw $modelException;
+        } catch (Exception $exception) {
+            ExceptionHelper::handle($this);
+        } catch (Error $error) {
+            ExceptionHelper::handle($this);
+        }
     }
 }

@@ -2,6 +2,11 @@
 
 namespace Herdl\PayRun\Models;
 
+use Error;
+use Exception;
+use Herdl\PayRun\Exceptions\ModelException;
+use Herdl\PayRun\Helpers\ExceptionHelper;
+
 /**
  * https://developer.payrun.io/docs/reference/healthcheck.html
  */
@@ -72,5 +77,25 @@ class HealthCheckModel
     public function getInfo(): string
     {
         return $this->info;
+    }
+
+    /**
+     * @return array
+     * @throws ModelException
+     */
+    public function format(): array
+    {
+        try {
+            return [
+                'Version' => $this->version,
+                'Info' => $this->info
+            ];
+        } catch (ModelException $modelException) {
+            throw $modelException;
+        } catch (Exception $exception) {
+            ExceptionHelper::handle($this);
+        } catch (Error $error) {
+            ExceptionHelper::handle($this);
+        }
     }
 }

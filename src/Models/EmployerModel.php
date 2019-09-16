@@ -2,6 +2,11 @@
 
 namespace Herdl\PayRun\Models;
 
+use Error;
+use Exception;
+use Herdl\PayRun\Exceptions\ModelException;
+use Herdl\PayRun\Helpers\ExceptionHelper;
+
 /**
  * https://developer.payrun.io/docs/reference/employer/index.html#employer
  */
@@ -499,25 +504,34 @@ class EmployerModel
 
     /**
      * @return array
+     * @throws ModelException
      */
     public function format(): array
     {
-        return [
-            'EffectiveDate' => $this->effectiveDate,
-            'Revision' => $this->revision,
-            'Name' => $this->name,
-            'Region' => $this->region,
-            'Territory' => $this->territory,
-            'BacsServiceUserNumber' => $this->bacsServiceUserNumber,
-            'RuleExclusions' => $this->ruleExclusions,
-            'ClaimEmploymentAllowance' => $this->claimEmploymentAllowance ? 'true' : 'false',
-            'ClaimSmallEmployerRelief' => $this->claimSmallEmployerRelief ? 'true' : 'false',
-            'ApprenticeshipLevyAllowance' => $this->apprenticeshipLevyAllowance,
-            'Address' => $this->address->format(),
-            'HmrcSettings' => $this->hmrcSettings->format(),
-            'BankAccount' => $this->bankAccount->format(),
-            'AutoEnrolment' => $this->autoEnrolment->format(),
-            'MetaData' => $this->metaData->format(),
-        ];
+        try {
+            return [
+                'EffectiveDate' => Date::formatDate($this->effectiveDate),
+                'Revision' => $this->revision,
+                'Name' => $this->name,
+                'Region' => $this->region,
+                'Territory' => $this->territory,
+                'BacsServiceUserNumber' => $this->bacsServiceUserNumber,
+                'RuleExclusions' => $this->ruleExclusions,
+                'ClaimEmploymentAllowance' => $this->claimEmploymentAllowance ? 'true' : 'false',
+                'ClaimSmallEmployerRelief' => $this->claimSmallEmployerRelief ? 'true' : 'false',
+                'ApprenticeshipLevyAllowance' => $this->apprenticeshipLevyAllowance,
+                'Address' => $this->address->format(),
+                'HmrcSettings' => $this->hmrcSettings->format(),
+                'BankAccount' => $this->bankAccount->format(),
+                'AutoEnrolment' => $this->autoEnrolment->format(),
+                'MetaData' => $this->metaData->format(),
+            ];
+        } catch (ModelException $modelException) {
+            throw $modelException;
+        } catch (Exception $exception) {
+            ExceptionHelper::handle($this);
+        } catch (Error $error) {
+            ExceptionHelper::handle($this);
+        }
     }
 }

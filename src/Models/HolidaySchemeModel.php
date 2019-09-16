@@ -2,6 +2,11 @@
 
 namespace Herdl\PayRun\Models;
 
+use Error;
+use Exception;
+use Herdl\PayRun\Exceptions\ModelException;
+use Herdl\PayRun\Helpers\ExceptionHelper;
+
 /**
  * https://developer.payrun.io/docs/reference/holidays/index.html#holiday-accrual-scheme
  */
@@ -413,5 +418,38 @@ class HolidaySchemeModel
     public function getAccrualPayCodes(): array
     {
         return $this->accrualPayCodes;
+    }
+
+    /**
+     * @return array
+     * @throws ModelException
+     */
+    public function format(): array
+    {
+        try {
+            return [
+                'EffectiveDate' => Date::formatDate($this->effectiveDate),
+                'Revision' => $this->revision,
+                'Code' => $this->code,
+                'SchemeKey' => $this->schemeKey,
+                'SchemeName' => $this->schemeName,
+                'SchemeCeasedDate' => Date::formatDate($this->schemeCeasedDate),
+                'YearStartMonth' => $this->yearStartMonth,
+                'YearStartDay' => $this->yearStartDay,
+                'AnnualEntitlementWeeks' => $this->annualEntitlementWeeks,
+                'MaxCarryOverDays' => $this->maxCarryOverDays,
+                'AllowNegativeBalance' => $this->allowNegativeBalance ? 'true' : 'false',
+                'BankHolidayInclusive' => $this->bankHolidayInclusive ? 'true' : 'false',
+                'AccrualPayCodes' => [
+                    'PayCode' => $this->accrualPayCodes,
+                ],
+            ];
+        } catch (ModelException $modelException) {
+            throw $modelException;
+        } catch (Exception $exception) {
+            ExceptionHelper::handle($this);
+        } catch (Error $error) {
+            ExceptionHelper::handle($this);
+        }
     }
 }

@@ -2,6 +2,11 @@
 
 namespace Herdl\PayRun\Models;
 
+use Error;
+use Exception;
+use Herdl\PayRun\Exceptions\ModelException;
+use Herdl\PayRun\Helpers\ExceptionHelper;
+
 /**
  * https://developer.payrun.io/docs/reference/payrun/index.html#pay-run
  */
@@ -355,5 +360,34 @@ class PayRunModel
     public function getSequence(): int
     {
         return $this->sequence;
+    }
+
+    /**
+     * @return array
+     * @throws ModelException
+     */
+    public function format(): array
+    {
+        try {
+            return [
+                'PayFrequency' => $this->payFrequency,
+                'PaymentDate' => Date::formatDate($this->paymentDate),
+                'PeriodStart' => Date::formatDate($this->periodStart),
+                'PeriodEnd' => Date::formatDate($this->periodEnd),
+                'Executed' => Date::formatDate($this->executed),
+                'TaxYear' => $this->taxYear,
+                'TaxPeriod' => $this->taxPeriod,
+                'IsSupplementary' => $this->isSupplementary ? 'true' : 'false',
+                'PaySchedule' => $this->paySchedule->format(),
+                'ProceedingPayRun' => $this->proceedingPayRun->format(),
+                'Sequence' => $this->sequence,
+            ];
+        } catch (ModelException $modelException) {
+            throw $modelException;
+        } catch (Exception $exception) {
+            ExceptionHelper::handle($this);
+        } catch (Error $error) {
+            ExceptionHelper::handle($this);
+        }
     }
 }

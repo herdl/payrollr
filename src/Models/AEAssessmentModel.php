@@ -2,6 +2,11 @@
 
 namespace Herdl\PayRun\Models;
 
+use Error;
+use Exception;
+use Herdl\PayRun\Exceptions\ModelException;
+use Herdl\PayRun\Helpers\ExceptionHelper;
+
 /**
  * https://developer.payrun.io/docs/reference/ae-assessment/index.html#ae-assessment
  */
@@ -450,24 +455,33 @@ class AEAssessmentModel
 
     /**
      * @return array
+     * @throws ModelException
      */
     public function format(): array
     {
-        return [
-            'Age' => (string)$this->age,
-            'StatePensionAge' => (string)$this->statePensionAge,
-            'StatePensionDate' => Date::formatDate($this->statePensionDate),
-            'AssessmentDate' => Date::formatDate($this->assessmentDate),
-            'QualifyingEarnings' => (string)$this->qualifyingEarnings,
-            'AssessmentCode' => (string)$this->assessmentCode,
-            'AssessmentEvent' => (string)$this->assessmentEvent,
-            'AssessmentResult' => (string)$this->assessmentResult,
-            'AssessmentOverride' => (string)$this->assessmentOverride,
-            'OptOutWindowEndDate' => Date::formatDate($this->optOutWindowEndDate),
-            'ReenrolmentDate' => Date::formatDate($this->reEnrollmentDate),
-            'IsMemberOfAlternativePensionScheme' => $this->isMemberOfAlternativePensionScheme ? 'true' : 'false',
-            'TaxYear' => (string)$this->taxYear,
-            'TaxPeriod' => (string)$this->taxPeriod,
-        ];
+        try {
+            return [
+                'Age' => (string)$this->age,
+                'StatePensionAge' => (string)$this->statePensionAge,
+                'StatePensionDate' => Date::formatDate($this->statePensionDate),
+                'AssessmentDate' => Date::formatDate($this->assessmentDate),
+                'QualifyingEarnings' => (string)$this->qualifyingEarnings,
+                'AssessmentCode' => (string)$this->assessmentCode,
+                'AssessmentEvent' => (string)$this->assessmentEvent,
+                'AssessmentResult' => (string)$this->assessmentResult,
+                'AssessmentOverride' => (string)$this->assessmentOverride,
+                'OptOutWindowEndDate' => Date::formatDate($this->optOutWindowEndDate),
+                'ReenrolmentDate' => Date::formatDate($this->reEnrollmentDate),
+                'IsMemberOfAlternativePensionScheme' => $this->isMemberOfAlternativePensionScheme ? 'true' : 'false',
+                'TaxYear' => (string)$this->taxYear,
+                'TaxPeriod' => (string)$this->taxPeriod,
+            ];
+        } catch (ModelException $modelException) {
+            throw $modelException;
+        } catch (Exception $exception) {
+            ExceptionHelper::handle($this);
+        } catch (Error $error) {
+            ExceptionHelper::handle($this);
+        }
     }
 }
