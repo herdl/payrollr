@@ -36,6 +36,7 @@ We use [SemVer](http://semver.org/) for versioning. For the versions available, 
 
 ## Authors
 * **Alex Blackham** - *Developer and Maintainer* - [B3none](https://github.com/b3none)
+* **Mat Moses** - *Logo creation* - [mooonthemove](https://instagram.com/mooonthemove)
 
 See also the list of [contributors](https://github.com/herdl/payrollr/contributors) who participated in this project.
 
