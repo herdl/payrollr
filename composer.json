@@ -1,5 +1,5 @@
 {
-  "name": "herdl/payrun-php",
+  "name": "herdl/payrollr",
   "description": "A PHP client for the PayRun.io API",
   "version": "1.0.0",
   "type": "library",
@@ -17,7 +17,7 @@
   "require": {
     "php": ">=7.2",
     "squizlabs/php_codesniffer": "^3.4",
-    "guzzle/guzzle": "^3.9",
+    "guzzlehttp/guzzle": "~6.0",
     "guzzlehttp/oauth-subscriber": "^0.3.0",
     "ext-json": "*"
   }
