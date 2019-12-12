@@ -3,7 +3,7 @@
 [![CircleCI](https://circleci.com/gh/herdl/payrollr/tree/develop.svg?style=svg)](https://circleci.com/gh/herdl/payrollr/tree/develop)
 [![HitCount](http://hits.dwyl.io/b3none/payrollr.svg)](http://hits.dwyl.io/herdl/payrollr)
 [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/herdl/payrollr/graphs/commit-activity)
-[![GitHub release](https://img.shields.io/github/release/b3none/payrollr.svg)](https://github.com/herdl/payrollr/releases/)
+[![GitHub releases](https://img.shields.io/github/release/herdl/payrollr.svg)](https://github.com/herdl/payrollr/releases/)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
 [![Open Source Love svg3](https://badges.frapsoft.com/os/v3/open-source.svg?v=103)](https://github.com/herdl)
 
